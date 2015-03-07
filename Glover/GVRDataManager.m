@@ -1,14 +1,14 @@
 //
-//  GLODataManager.m
+//  GVRDataManager.m
 //  Glover
 //
 //  Created by Sebastian Owodziń on 14/02/2015.
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import "GLODataManager.h"
+#import "GVRDataManager.h"
 
-@interface GLODataManager () {
+@interface GVRDataManager () {
 
 }
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation GLODataManager
+@implementation GVRDataManager
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;

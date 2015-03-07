@@ -1,5 +1,5 @@
 //
-//  GLODataManager.h
+//  GVRDataManager.h
 //  Glover
 //
 //  Created by Sebastian Owodziń on 14/02/2015.
@@ -8,7 +8,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface GLODataManager : NSObject
+@interface GVRDataManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext * managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel * managedObjectModel;

@@ -16,9 +16,9 @@
 
 @synthesize dataManager = _dataManager;
 
-- (GLODataManager *)dataManager {
+- (GVRDataManager *)dataManager {
     if ( nil == _dataManager ) {
-        _dataManager = [[GLODataManager alloc] init];
+        _dataManager = [[GVRDataManager alloc] init];
     }
     
     return _dataManager;

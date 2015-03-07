@@ -10,8 +10,8 @@
 		E9330A751A98B7490088623D /* Glover.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A741A98B7490088623D /* Glover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9330A7B1A98B7490088623D /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9330A6F1A98B7490088623D /* Glover.framework */; };
 		E9330A821A98B7490088623D /* GloverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A811A98B7490088623D /* GloverTests.m */; };
-		E9330A921A98B94C0088623D /* GLODataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A901A98B94C0088623D /* GLODataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E9330A931A98B94C0088623D /* GLODataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A911A98B94C0088623D /* GLODataManager.m */; };
+		E9330A921A98B94C0088623D /* GVRDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A901A98B94C0088623D /* GVRDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A911A98B94C0088623D /* GVRDataManager.m */; };
 		E9330AA31A98D4600088623D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA21A98D4600088623D /* main.m */; };
 		E9330AA61A98D4600088623D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA51A98D4600088623D /* AppDelegate.m */; };
 		E9330AA91A98D4600088623D /* GloverExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA71A98D4600088623D /* GloverExample.xcdatamodeld */; };
@@ -64,8 +64,8 @@
 		E9330A7A1A98B7490088623D /* GloverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GloverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9330A801A98B7490088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9330A811A98B7490088623D /* GloverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GloverTests.m; sourceTree = "<group>"; };
-		E9330A901A98B94C0088623D /* GLODataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLODataManager.h; sourceTree = "<group>"; };
-		E9330A911A98B94C0088623D /* GLODataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLODataManager.m; sourceTree = "<group>"; };
+		E9330A901A98B94C0088623D /* GVRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVRDataManager.h; sourceTree = "<group>"; };
+		E9330A911A98B94C0088623D /* GVRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVRDataManager.m; sourceTree = "<group>"; };
 		E9330A9E1A98D4600088623D /* GloverExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloverExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9330AA11A98D4600088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9330AA21A98D4600088623D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -177,8 +177,8 @@
 		E9330A711A98B7490088623D /* Glover */ = {
 			isa = PBXGroup;
 			children = (
-				E9330A901A98B94C0088623D /* GLODataManager.h */,
-				E9330A911A98B94C0088623D /* GLODataManager.m */,
+				E9330A901A98B94C0088623D /* GVRDataManager.h */,
+				E9330A911A98B94C0088623D /* GVRDataManager.m */,
 				E9330A741A98B7490088623D /* Glover.h */,
 				E9330A721A98B7490088623D /* Supporting Files */,
 			);
@@ -306,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9330A751A98B7490088623D /* Glover.h in Headers */,
-				E9330A921A98B94C0088623D /* GLODataManager.h in Headers */,
+				E9330A921A98B94C0088623D /* GVRDataManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +426,7 @@
 		E9330A661A98B7490088623D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = GVR;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = mobiletoolkit.org;
 				TargetAttributes = {
@@ -547,7 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9330A931A98B94C0088623D /* GLODataManager.m in Sources */,
+				E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +957,7 @@
 				E9330AC31A98D4600088623D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9330AC41A98D4600088623D /* Build configuration list for PBXNativeTarget "GloverExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -964,6 +966,7 @@
 				E9330AC61A98D4600088623D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9330AF21A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExample" */ = {
 			isa = XCConfigurationList;
@@ -972,6 +975,7 @@
 				E9330AF41A98F6280088623D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9330AF51A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -980,6 +984,7 @@
 				E9330AF71A98F6280088623D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

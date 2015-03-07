@@ -16,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char GloverVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Glover/PublicHeader.h>
 
-#import <Glover/GLODataManager.h>
+#import <Glover/GVRDataManager.h>

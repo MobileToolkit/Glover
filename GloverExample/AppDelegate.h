@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) GLODataManager *dataManager;
+@property (readonly, strong, nonatomic) GVRDataManager *dataManager;
 
 @end
 
