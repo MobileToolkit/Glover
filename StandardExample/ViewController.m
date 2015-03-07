@@ -11,24 +11,40 @@
 #import "AppDelegate.h"
 #import "ExampleEntity.h"
 
-@interface ViewController () {
-    NSFetchedResultsController *   __fetchedResultsController;
-    
-    AppDelegate *   __appDelegate;
-}
+@interface ViewController ()
+
+@property (readonly, strong, nonatomic) NSFetchedResultsController * _fetchedResultsController;
 
 @end
 
 @implementation ViewController
 
+@synthesize _fetchedResultsController = __fetchedResultsController;
+
 - (IBAction)refreshButtonTouched:(UIBarButtonItem *)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        ExampleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"ExampleEntity" inManagedObjectContext:__appDelegate.managedObjectContext];
+        ExampleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"ExampleEntity" inManagedObjectContext:appDelegate.managedObjectContext];
         
         entity.name = [NSString stringWithFormat:@"entity_%lu", idx];
     }
     
-    [__appDelegate saveContext];
+    [appDelegate saveContext];
+}
+
+- (NSFetchedResultsController *)_fetchedResultsController {
+    if ( nil == __fetchedResultsController ) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"ExampleEntity"];
+        fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
+        
+        __fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:appDelegate.dataManager.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        __fetchedResultsController.delegate = self;
+    }
+    
+    return __fetchedResultsController;
 }
 
 #pragma mark - UIViewController
@@ -36,16 +52,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    __appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"ExampleEntity"];
-    fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
-    
-    __fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:__appDelegate.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    __fetchedResultsController.delegate = self;
-    
     NSError *error = nil;
-    [__fetchedResultsController performFetch:&error];
+    [self._fetchedResultsController performFetch:&error];
     if ( nil != error ) {
         [[[UIAlertView alloc] initWithTitle:@"ERROR" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
@@ -84,17 +92,17 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return __fetchedResultsController.sections.count;
+    return self._fetchedResultsController.sections.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = __fetchedResultsController.sections[section];
+    id<NSFetchedResultsSectionInfo> sectionInfo = self._fetchedResultsController.sections[section];
     
     return sectionInfo.name;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = __fetchedResultsController.sections[section];
+    id<NSFetchedResultsSectionInfo> sectionInfo = self._fetchedResultsController.sections[section];
     
     return sectionInfo.numberOfObjects;
 }
@@ -102,7 +110,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExampleCell" forIndexPath:indexPath];
     
-    ExampleEntity *entity = (ExampleEntity *)[__fetchedResultsController objectAtIndexPath:indexPath];
+    ExampleEntity *entity = (ExampleEntity *)[self._fetchedResultsController objectAtIndexPath:indexPath];
     
     cell.textLabel.text = entity.name;
     

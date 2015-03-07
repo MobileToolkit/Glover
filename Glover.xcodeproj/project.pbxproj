@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91E905E1AAB32970046C823 /* PersistedEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */; };
+		E91E90611AAB32A70046C823 /* InMemoryEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */; };
+		E91E90671AAB334F0046C823 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90661AAB334F0046C823 /* BaseViewController.m */; };
+		E91E906A1AAB35EE0046C823 /* PersistedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90691AAB35EE0046C823 /* PersistedEntity.m */; };
+		E91E906D1AAB35EE0046C823 /* InMemoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */; };
+		E92296D71AAB268A00E890AE /* ComplexModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */; };
 		E9330A751A98B7490088623D /* Glover.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A741A98B7490088623D /* Glover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9330A7B1A98B7490088623D /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9330A6F1A98B7490088623D /* Glover.framework */; };
 		E9330A821A98B7490088623D /* GloverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A811A98B7490088623D /* GloverTests.m */; };
@@ -14,13 +20,13 @@
 		E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A911A98B94C0088623D /* GVRDataManager.m */; };
 		E9330AA31A98D4600088623D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA21A98D4600088623D /* main.m */; };
 		E9330AA61A98D4600088623D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA51A98D4600088623D /* AppDelegate.m */; };
-		E9330AA91A98D4600088623D /* GloverExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA71A98D4600088623D /* GloverExample.xcdatamodeld */; };
-		E9330AAC1A98D4600088623D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AAB1A98D4600088623D /* ViewController.m */; };
+		E9330AA91A98D4600088623D /* SImpleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */; };
+		E9330AAC1A98D4600088623D /* SimpleEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */; };
 		E9330AAF1A98D4600088623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9330AAD1A98D4600088623D /* Main.storyboard */; };
 		E9330AB11A98D4600088623D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9330AB01A98D4600088623D /* Images.xcassets */; };
 		E9330AB41A98D4600088623D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9330AB21A98D4600088623D /* LaunchScreen.xib */; };
 		E9330AC01A98D4600088623D /* GloverExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330ABF1A98D4600088623D /* GloverExampleTests.m */; };
-		E9330AC91A98D5120088623D /* ExampleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AC81A98D5120088623D /* ExampleEntity.m */; };
+		E9330AC91A98D5120088623D /* SimpleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AC81A98D5120088623D /* SimpleEntity.m */; };
 		E9330ACA1A98D6240088623D /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9330A6F1A98B7490088623D /* Glover.framework */; };
 		E9330AD41A98F6280088623D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AD31A98F6280088623D /* main.m */; };
 		E9330AD71A98F6280088623D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AD61A98F6280088623D /* AppDelegate.m */; };
@@ -58,6 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E91E905C1AAB32970046C823 /* PersistedEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistedEntityViewController.h; sourceTree = "<group>"; };
+		E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistedEntityViewController.m; sourceTree = "<group>"; };
+		E91E905F1AAB32A70046C823 /* InMemoryEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMemoryEntityViewController.h; sourceTree = "<group>"; };
+		E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InMemoryEntityViewController.m; sourceTree = "<group>"; };
+		E91E90651AAB334F0046C823 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E91E90661AAB334F0046C823 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		E91E90681AAB35EE0046C823 /* PersistedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistedEntity.h; sourceTree = "<group>"; };
+		E91E90691AAB35EE0046C823 /* PersistedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistedEntity.m; sourceTree = "<group>"; };
+		E91E906B1AAB35EE0046C823 /* InMemoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMemoryEntity.h; sourceTree = "<group>"; };
+		E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InMemoryEntity.m; sourceTree = "<group>"; };
+		E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComplexModel.xcdatamodel; sourceTree = "<group>"; };
 		E9330A6F1A98B7490088623D /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Glover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9330A731A98B7490088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9330A741A98B7490088623D /* Glover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glover.h; sourceTree = "<group>"; };
@@ -71,17 +88,17 @@
 		E9330AA21A98D4600088623D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9330AA41A98D4600088623D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9330AA51A98D4600088623D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9330AA81A98D4600088623D /* GloverExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GloverExample.xcdatamodel; sourceTree = "<group>"; };
-		E9330AAA1A98D4600088623D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9330AAB1A98D4600088623D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SImpleModel.xcdatamodel; sourceTree = "<group>"; };
+		E9330AAA1A98D4600088623D /* SimpleEntityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleEntityViewController.h; sourceTree = "<group>"; };
+		E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleEntityViewController.m; sourceTree = "<group>"; };
 		E9330AAE1A98D4600088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9330AB01A98D4600088623D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9330AB31A98D4600088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E9330AB91A98D4600088623D /* GloverExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GloverExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9330ABE1A98D4600088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9330ABF1A98D4600088623D /* GloverExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GloverExampleTests.m; sourceTree = "<group>"; };
-		E9330AC71A98D5120088623D /* ExampleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleEntity.h; sourceTree = "<group>"; };
-		E9330AC81A98D5120088623D /* ExampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleEntity.m; sourceTree = "<group>"; };
+		E9330AC71A98D5120088623D /* SimpleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleEntity.h; sourceTree = "<group>"; };
+		E9330AC81A98D5120088623D /* SimpleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleEntity.m; sourceTree = "<group>"; };
 		E9330ACF1A98F6270088623D /* StandardExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9330AD21A98F6280088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9330AD31A98F6280088623D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +165,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91E905B1AAB2D930046C823 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E91E90651AAB334F0046C823 /* BaseViewController.h */,
+				E91E90661AAB334F0046C823 /* BaseViewController.m */,
+				E9330AAA1A98D4600088623D /* SimpleEntityViewController.h */,
+				E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */,
+				E91E905C1AAB32970046C823 /* PersistedEntityViewController.h */,
+				E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */,
+				E91E905F1AAB32A70046C823 /* InMemoryEntityViewController.h */,
+				E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E91E906E1AAB35F70046C823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */,
+				E9330AC71A98D5120088623D /* SimpleEntity.h */,
+				E9330AC81A98D5120088623D /* SimpleEntity.m */,
+				E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */,
+				E91E906B1AAB35EE0046C823 /* InMemoryEntity.h */,
+				E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */,
+				E91E90681AAB35EE0046C823 /* PersistedEntity.h */,
+				E91E90691AAB35EE0046C823 /* PersistedEntity.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		E9330A651A98B7490088623D = {
 			isa = PBXGroup;
 			children = (
@@ -213,16 +260,13 @@
 		E9330A9F1A98D4600088623D /* GloverExample */ = {
 			isa = PBXGroup;
 			children = (
+				E91E906E1AAB35F70046C823 /* Model */,
+				E91E905B1AAB2D930046C823 /* ViewControllers */,
 				E9330AA41A98D4600088623D /* AppDelegate.h */,
 				E9330AA51A98D4600088623D /* AppDelegate.m */,
-				E9330AAA1A98D4600088623D /* ViewController.h */,
-				E9330AAB1A98D4600088623D /* ViewController.m */,
 				E9330AAD1A98D4600088623D /* Main.storyboard */,
 				E9330AB01A98D4600088623D /* Images.xcassets */,
 				E9330AB21A98D4600088623D /* LaunchScreen.xib */,
-				E9330AA71A98D4600088623D /* GloverExample.xcdatamodeld */,
-				E9330AC71A98D5120088623D /* ExampleEntity.h */,
-				E9330AC81A98D5120088623D /* ExampleEntity.m */,
 				E9330AA01A98D4600088623D /* Supporting Files */,
 			);
 			path = GloverExample;
@@ -564,10 +608,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91E906A1AAB35EE0046C823 /* PersistedEntity.m in Sources */,
 				E9330AA61A98D4600088623D /* AppDelegate.m in Sources */,
-				E9330AA91A98D4600088623D /* GloverExample.xcdatamodeld in Sources */,
-				E9330AAC1A98D4600088623D /* ViewController.m in Sources */,
-				E9330AC91A98D5120088623D /* ExampleEntity.m in Sources */,
+				E91E90671AAB334F0046C823 /* BaseViewController.m in Sources */,
+				E91E906D1AAB35EE0046C823 /* InMemoryEntity.m in Sources */,
+				E9330AA91A98D4600088623D /* SImpleModel.xcdatamodeld in Sources */,
+				E92296D71AAB268A00E890AE /* ComplexModel.xcdatamodeld in Sources */,
+				E9330AAC1A98D4600088623D /* SimpleEntityViewController.m in Sources */,
+				E9330AC91A98D5120088623D /* SimpleEntity.m in Sources */,
+				E91E90611AAB32A70046C823 /* InMemoryEntityViewController.m in Sources */,
+				E91E905E1AAB32970046C823 /* PersistedEntityViewController.m in Sources */,
 				E9330AA31A98D4600088623D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -989,13 +1039,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E9330AA71A98D4600088623D /* GloverExample.xcdatamodeld */ = {
+		E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E9330AA81A98D4600088623D /* GloverExample.xcdatamodel */,
+				E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */,
 			);
-			currentVersion = E9330AA81A98D4600088623D /* GloverExample.xcdatamodel */;
-			path = GloverExample.xcdatamodeld;
+			currentVersion = E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */;
+			path = ComplexModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */,
+			);
+			currentVersion = E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */;
+			path = SImpleModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
