@@ -1,37 +1,37 @@
 //
-//  ViewController.m
-//  GloverExample
+//  BaseViewController.m
+//  Glover
 //
-//  Created by Sebastian Owodziń on 21/02/2015.
+//  Created by Sebastian Owodziń on 07/03/2015.
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "BaseViewController.h"
 
-#import "AppDelegate.h"
-#import "ExampleEntity.h"
-
-@interface ViewController () {
-    NSFetchedResultsController *   __fetchedResultsController;
-    
-    AppDelegate *   __appDelegate;
-}
+@interface BaseViewController ()
 
 @end
 
-@implementation ViewController
+@implementation BaseViewController
 
-- (IBAction)refreshButtonTouched:(UIBarButtonItem *)sender {
-    for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        ExampleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"ExampleEntity" inManagedObjectContext:__appDelegate.dataManager.managedObjectContext];
+@synthesize fetchedResultsController = _fetchedResultsController;
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if ( nil == _fetchedResultsController ) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         
-        entity.name = [NSString stringWithFormat:@"entity_%lu", idx];
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest] managedObjectContext:appDelegate.dataManager.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        _fetchedResultsController.delegate = self;
     }
     
-    [__appDelegate.dataManager saveContext];
+    return _fetchedResultsController;
 }
 
-- (IBAction)trashButtonTouched:(UIBarButtonItem *)sender {
+- (NSFetchRequest *)fetchRequest {
+    return nil;
+}
+
+- (IBAction)refreshButtonTouched:(UIBarButtonItem *)sender {
     
 }
 
@@ -40,16 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    __appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"ExampleEntity"];
-    fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
-    
-    __fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:__appDelegate.dataManager.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    __fetchedResultsController.delegate = self;
-    
     NSError *error = nil;
-    [__fetchedResultsController performFetch:&error];
+    [self.fetchedResultsController performFetch:&error];
     if ( nil != error ) {
         [[[UIAlertView alloc] initWithTitle:@"ERROR" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
@@ -88,29 +80,23 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return __fetchedResultsController.sections.count;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = __fetchedResultsController.sections[section];
+    id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
     
     return sectionInfo.name;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id<NSFetchedResultsSectionInfo> sectionInfo = __fetchedResultsController.sections[section];
+    id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
     
     return sectionInfo.numberOfObjects;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ExampleCell" forIndexPath:indexPath];
-    
-    ExampleEntity *entity = (ExampleEntity *)[__fetchedResultsController objectAtIndexPath:indexPath];
-    
-    cell.textLabel.text = entity.name;
-    
-    return cell;
+    return nil;
 }
 
 @end

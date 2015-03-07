@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import <CoreData/NSFetchedResultsController.h>
 
 @interface ViewController : UIViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 

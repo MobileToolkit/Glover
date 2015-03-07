@@ -8,6 +8,8 @@
 
 #import <CoreData/CoreData.h>
 
+FOUNDATION_EXPORT NSString *const GVRErrorDomain;
+
 @interface GVRDataManager : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext * managedObjectContext;
