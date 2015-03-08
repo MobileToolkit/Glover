@@ -22,7 +22,7 @@ The recommended way to install Glover is to download the binary release, unzip i
 
 The easies way start using the Glover's goodness is:
   
-```
+```Objective-C
 #import <Glover/Glover.h>
 
 // instantiate GVRDataManagerConfiguration object
