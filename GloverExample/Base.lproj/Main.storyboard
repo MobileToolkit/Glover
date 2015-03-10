@@ -50,9 +50,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Simple Entities" id="nCo-g7-cFg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="6w4-pm-XSw">
+                        <barButtonItem key="rightBarButtonItem" title="Import" id="6w4-pm-XSw">
                             <connections>
-                                <action selector="refreshButtonTouched:" destination="vXZ-lx-hvc" id="w6m-Hg-ZPK"/>
+                                <action selector="importButtonTouched:" destination="vXZ-lx-hvc" id="MHb-TT-qdo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,7 +87,6 @@
         <!--Simple Entities-->
         <scene sceneID="1UV-sx-2CJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PZN-cj-hFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cNC-iN-vbH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Simple Entities" id="QGS-9t-G9P"/>
                     <toolbarItems/>
@@ -100,6 +99,7 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="nqT-dI-APF"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZN-cj-hFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="261" y="-633"/>
         </scene>
@@ -149,9 +149,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Persisted Entities" id="vlM-xL-RwD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="NTQ-7M-jcK">
+                        <barButtonItem key="rightBarButtonItem" title="Import" id="NTQ-7M-jcK">
                             <connections>
-                                <action selector="refreshButtonTouched:" destination="dCc-dX-A35" id="C8i-Ql-aBc"/>
+                                <action selector="importButtonTouched:" destination="dCc-dX-A35" id="sHT-nn-5GK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,7 +166,6 @@
         <!--Persited Entities-->
         <scene sceneID="8Xc-Gv-BUc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5AP-4e-0zk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rE0-nt-UB3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Persited Entities" id="IET-nZ-eIf"/>
                     <toolbarItems/>
@@ -179,6 +178,7 @@
                         <segue destination="dCc-dX-A35" kind="relationship" relationship="rootViewController" id="Sij-TR-Etf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5AP-4e-0zk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="261" y="63"/>
         </scene>
@@ -228,9 +228,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="In Memory Entities" id="7Q0-nq-SYr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wXh-mn-mvc">
+                        <barButtonItem key="rightBarButtonItem" title="Import" id="wXh-mn-mvc">
                             <connections>
-                                <action selector="refreshButtonTouched:" destination="HxJ-YK-4ks" id="wJC-5b-hpq"/>
+                                <action selector="importButtonTouched:" destination="HxJ-YK-4ks" id="lJo-c4-9eg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -245,7 +245,6 @@
         <!--In Memory Entities-->
         <scene sceneID="twG-Xy-0Eg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkr-lM-WVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5L5-dC-bDD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="In Memory Entities" id="B6A-xm-oPT"/>
                     <toolbarItems/>
@@ -258,6 +257,7 @@
                         <segue destination="HxJ-YK-4ks" kind="relationship" relationship="rootViewController" id="RcS-th-hcD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fkr-lM-WVy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="261" y="749"/>
         </scene>

@@ -31,7 +31,7 @@
     return nil;
 }
 
-- (IBAction)refreshButtonTouched:(UIBarButtonItem *)sender {
+- (IBAction)importButtonTouched:(UIBarButtonItem *)sender {
     
 }
 

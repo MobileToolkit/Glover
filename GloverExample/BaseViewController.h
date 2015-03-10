@@ -19,6 +19,6 @@
 
 - (NSFetchRequest *)fetchRequest;
 
-- (IBAction)refreshButtonTouched:(UIBarButtonItem *)sender;
+- (IBAction)importButtonTouched:(UIBarButtonItem *)sender;
 
 @end
