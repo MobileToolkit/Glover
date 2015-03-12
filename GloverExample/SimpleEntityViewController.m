@@ -27,12 +27,12 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        SimpleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"SimpleEntity" inManagedObjectContext:appDelegate.dataManager.managedObjectContext];
-        
-        entity.name = [NSString stringWithFormat:@"SimpleEntity_%lu", idx];
+        [appDelegate.dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+            SimpleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"SimpleEntity" inManagedObjectContext:workerContext];
+            
+            entity.name = [NSString stringWithFormat:@"SimpleEntity_%lu", idx];
+        }];
     }
-    
-    [appDelegate.dataManager saveContext];
 }
 
 #pragma mark - UITableViewDataSource

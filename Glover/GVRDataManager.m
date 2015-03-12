@@ -10,7 +10,11 @@
 
 NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
 
-@interface GVRDataManager ()
+@interface GVRDataManager () {
+    NSTimer *                   __autoSaveTimer;
+    BOOL                        __isSaving;
+    NSManagedObjectContext *    __workerContext;
+}
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext * _writerManagedObjectContext;
 
@@ -74,28 +78,69 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
 }
 
 - (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if ( nil != managedObjectContext ) {
-        if ( [managedObjectContext hasChanges] ) {
-            NSLog(@"SAVING: main context on Thread: %@", NSThread.currentThread);
-            
-            NSError *error = nil;
-            if ( ![managedObjectContext save:&error] ) {
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                abort();
-            }
-            
-            [__writerManagedObjectContext performBlock:^{
-                NSLog(@"SAVING: writer context on Thread: %@", NSThread.currentThread);
+    if ( NO == __isSaving ) {
+        __isSaving = YES;
+        NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+        
+        [managedObjectContext performBlock:^{
+            if ( [managedObjectContext hasChanges] ) {
+                NSLog(@"SAVING: main context on Thread: %@", NSThread.currentThread);
                 
                 NSError *error = nil;
-                if ( ![__writerManagedObjectContext save:&error] ) {
+                if ( ![managedObjectContext save:&error] ) {
                     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
                     abort();
                 }
-            }];
-        }
+                
+                [__writerManagedObjectContext performBlock:^{
+                    NSLog(@"SAVING: writer context on Thread: %@", NSThread.currentThread);
+                    
+                    NSError *error = nil;
+                    if ( ![__writerManagedObjectContext save:&error] ) {
+                        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                        abort();
+                    }
+                    
+                    __isSaving = NO;
+                }];
+            }
+        }];
     }
+}
+
+- (void)dataOperationWithBlock:(void (^)(NSManagedObjectContext *workerContext))workerContextBlock {
+    if ( nil == __workerContext ) {
+        __workerContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        __workerContext.parentContext = self.managedObjectContext;
+        __workerContext.undoManager = nil;
+    }
+    
+    [__workerContext performBlock:^{
+        workerContextBlock(__workerContext);
+        
+        if ( [__workerContext hasChanges] ) {
+            NSLog(@"SAVING: worker context on Thread: %@", NSThread.currentThread);
+            
+            NSError *error = nil;
+            if ( ![__workerContext save:&error] ) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+        }
+    }];
+}
+
+#pragma mark - NSObject
+
+- (instancetype)init {
+    self = [super init];
+    if ( self ) {
+        __isSaving = NO;
+        
+        __autoSaveTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(saveContext) userInfo:nil repeats:YES];
+    }
+    
+    return self;
 }
 
 #pragma mark - Private methods

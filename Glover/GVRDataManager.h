@@ -20,4 +20,6 @@ FOUNDATION_EXPORT NSString *const GVRErrorDomain;
 
 - (void)saveContext;
 
+- (void)dataOperationWithBlock:(void (^)(NSManagedObjectContext *workerContext))workerContextBlock;
+
 @end
