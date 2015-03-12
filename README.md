@@ -40,6 +40,6 @@ Now you can start using **dataManager.managedObjectContext** like you'd use with
 
 // TODO
 
-## Processing large amount of CoreData changes & maintaining UI responsiveness
+## Processing large amounts of CoreData changes & maintaining UI responsiveness
 
 // TODO: info about using background worker contexts for processing large amounts of data
