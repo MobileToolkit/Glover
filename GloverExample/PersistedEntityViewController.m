@@ -27,12 +27,12 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        PersistedEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"PersistedEntity" inManagedObjectContext:appDelegate.dataManager.managedObjectContext];
-        
-        entity.name = [NSString stringWithFormat:@"PersistedEntity_%lu", idx];
+        [appDelegate.dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+            PersistedEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"PersistedEntity" inManagedObjectContext:appDelegate.dataManager.managedObjectContext];
+            
+            entity.name = [NSString stringWithFormat:@"PersistedEntity_%lu", idx];
+        }];
     }
-    
-    [appDelegate.dataManager saveContext];
 }
 
 #pragma mark - UITableViewDataSource

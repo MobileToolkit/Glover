@@ -42,4 +42,16 @@ Now you can start using **dataManager.managedObjectContext** like you'd use with
 
 ## Processing large amounts of CoreData changes & maintaining UI responsiveness
 
-// TODO: info about using background worker contexts for processing large amounts of data
+If you need to process a lot of CoreData changes & maintain your app's UI responsive Glover has something nice for you.
+
+```Objective-C
+GVRDataManagerConfiguration *configuration = [GVRDataManagerConfiguration defaultConfiguration];
+
+GVRDataManager *dataManager = [[GVRDataManager alloc] initWithConfiguration:configuration]
+
+for ( NSUInteger idx = 0; idx < 10000; idx++ ) {
+        [dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+            // here you should do all changes (make sure you use workerContext for those)
+        }];
+    }
+```
