@@ -18,6 +18,8 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext * _writerManagedObjectContext;
 
+- (void)__performDelayedAutoSave;
+
 @end
 
 @implementation GVRDataManager
@@ -127,6 +129,10 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
                 abort();
             }
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self __performDelayedAutoSave];
+        });
     }];
 }
 
@@ -136,8 +142,6 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
     self = [super init];
     if ( self ) {
         __isSaving = NO;
-        
-        __autoSaveTimer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(saveContext) userInfo:nil repeats:YES];
     }
     
     return self;
@@ -152,6 +156,15 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
     }
     
     return __writerManagedObjectContext;
+}
+
+- (void)__performDelayedAutoSave {
+    if ( nil != __autoSaveTimer ) {
+        [__autoSaveTimer invalidate];
+        __autoSaveTimer = nil;
+    }
+    
+    __autoSaveTimer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(saveContext) userInfo:nil repeats:NO];
 }
 
 @end
