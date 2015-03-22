@@ -5,7 +5,6 @@ Multi-layered data manager that utilises CoreData by using multiple contexts & a
 ## Information
 
 * Source code [available on GitHub](https://github.com/MobileToolkit/Glover-iOS)
-* More information, known limitations, and how-tos [available on the wiki](https://github.com/MobileToolkit/Glover-iOS/wiki)
 
 ## Getting Help
 
