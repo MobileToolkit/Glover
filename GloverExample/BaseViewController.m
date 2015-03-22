@@ -8,6 +8,8 @@
 
 #import "BaseViewController.h"
 
+#import <CoreData/CoreData.h>
+
 @interface BaseViewController ()
 
 @end
@@ -18,13 +20,15 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if ( nil == _fetchedResultsController ) {
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        
-        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest] managedObjectContext:appDelegate.dataManager.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:[self fetchRequest] managedObjectContext:[self managedObjectContext] sectionNameKeyPath:nil cacheName:nil];
         _fetchedResultsController.delegate = self;
     }
     
     return _fetchedResultsController;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    return nil;
 }
 
 - (NSFetchRequest *)fetchRequest {

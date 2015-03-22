@@ -13,7 +13,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) GVRDataManager *dataManager;
+@property (readonly, strong, nonatomic) GVRDataManager *simpleDataManager;
+
+@property (readonly, strong, nonatomic) GVRDataManager *complexDataManager;
 
 @end
 

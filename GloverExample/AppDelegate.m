@@ -14,14 +14,36 @@
 
 @implementation AppDelegate
 
-@synthesize dataManager = _dataManager;
+@synthesize simpleDataManager = _simpleDataManager;
+@synthesize complexDataManager = _complexDataManager;
 
-- (GVRDataManager *)dataManager {
-    if ( nil == _dataManager ) {
-        _dataManager = [[GVRDataManager alloc] init];
+- (GVRDataManager *)simpleDataManager {
+    if ( nil == _simpleDataManager ) {
+        _simpleDataManager = [[GVRDataManager alloc] initWithConfiguration:[GVRDataManagerConfiguration defaultConfiguration]];
     }
     
-    return _dataManager;
+    return _simpleDataManager;
+}
+
+- (GVRDataManager *)complexDataManager {
+    if ( nil == _complexDataManager ) {
+        GVRDataManagerConfiguration *config = [GVRDataManagerConfiguration defaultConfiguration];
+        config.persistentStores = @[
+            @{
+                GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverPersistedEntities.sqlite"],
+                GVRDataManagerConfigurationPersistentStoreTypeKey: NSSQLiteStoreType,
+                GVRDataManagerConfigurationPersistentStoreConfigurationKey: @"PersistedEntities"
+            },
+            @{
+                GVRDataManagerConfigurationPersistentStoreTypeKey: NSInMemoryStoreType,
+                GVRDataManagerConfigurationPersistentStoreConfigurationKey: @"InMemoryEntities"
+            }
+        ];
+        
+        _complexDataManager = [[GVRDataManager alloc] initWithConfiguration:config];
+    }
+    
+    return _complexDataManager;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -51,7 +73,8 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     
-    [self.dataManager saveContext];
+    [self.simpleDataManager saveContext];
+    [self.complexDataManager saveContext];
 }
 
 @end

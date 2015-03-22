@@ -16,6 +16,12 @@
 
 @implementation PersistedEntityViewController
 
+- (NSManagedObjectContext *)managedObjectContext {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    return appDelegate.complexDataManager.managedObjectContext;
+}
+
 - (NSFetchRequest *)fetchRequest {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"PersistedEntity"];
     fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
@@ -27,8 +33,8 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        [appDelegate.dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
-            PersistedEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"PersistedEntity" inManagedObjectContext:appDelegate.dataManager.managedObjectContext];
+        [appDelegate.complexDataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+            PersistedEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"PersistedEntity" inManagedObjectContext:workerContext];
             
             entity.name = [NSString stringWithFormat:@"PersistedEntity_%lu", idx];
         }];

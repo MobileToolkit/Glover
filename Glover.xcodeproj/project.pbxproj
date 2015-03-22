@@ -52,6 +52,8 @@
 		E9330AE51A98F6280088623D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9330AE31A98F6280088623D /* LaunchScreen.xib */; };
 		E9330AF11A98F6280088623D /* StandardExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AF01A98F6280088623D /* StandardExampleTests.m */; };
 		E9330AFA1A98FAF90088623D /* ExampleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AF91A98FAF90088623D /* ExampleEntity.m */; };
+		E94674DD1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E94674DE1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,8 @@
 		E9330AF01A98F6280088623D /* StandardExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardExampleTests.m; sourceTree = "<group>"; };
 		E9330AF81A98FAF90088623D /* ExampleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleEntity.h; sourceTree = "<group>"; };
 		E9330AF91A98FAF90088623D /* ExampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleEntity.m; sourceTree = "<group>"; };
+		E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVRDataManagerConfiguration.h; sourceTree = "<group>"; };
+		E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVRDataManagerConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,8 @@
 		E9330A711A98B7490088623D /* Glover */ = {
 			isa = PBXGroup;
 			children = (
+				E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */,
+				E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */,
 				E9330A901A98B94C0088623D /* GVRDataManager.h */,
 				E9330A911A98B94C0088623D /* GVRDataManager.m */,
 				E9330A741A98B7490088623D /* Glover.h */,
@@ -372,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9330A751A98B7490088623D /* Glover.h in Headers */,
+				E94674DD1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h in Headers */,
 				E9330A921A98B94C0088623D /* GVRDataManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +624,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94674DE1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m in Sources */,
 				E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/NSFetchedResultsController.h>
-#import <CoreData/NSFetchRequest.h>
 #import "AppDelegate.h"
+
+@class NSManagedObjectContext;
+@class NSFetchRequest;
 
 @interface BaseViewController : UIViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 
 @property (readonly, strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (NSManagedObjectContext *)managedObjectContext;
 
 - (NSFetchRequest *)fetchRequest;
 

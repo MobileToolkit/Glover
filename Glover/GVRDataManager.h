@@ -8,6 +8,8 @@
 
 #import <CoreData/CoreData.h>
 
+#import "GVRDataManagerConfiguration.h"
+
 FOUNDATION_EXPORT NSString *const GVRErrorDomain;
 
 @interface GVRDataManager : NSObject
@@ -16,7 +18,9 @@ FOUNDATION_EXPORT NSString *const GVRErrorDomain;
 @property (readonly, strong, nonatomic) NSManagedObjectModel * managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator * persistentStoreCoordinator;
 
-- (NSURL *)applicationDocumentsDirectory;
++ (NSURL *)applicationDocumentsDirectory;
+
+- (instancetype)initWithConfiguration:(GVRDataManagerConfiguration *)configuration;
 
 - (void)saveContext;
 

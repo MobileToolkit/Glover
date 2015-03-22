@@ -16,6 +16,12 @@
 
 @implementation SimpleEntityViewController
 
+- (NSManagedObjectContext *)managedObjectContext {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    return appDelegate.simpleDataManager.managedObjectContext;
+}
+
 - (NSFetchRequest *)fetchRequest {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SimpleEntity"];
     fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
@@ -27,7 +33,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        [appDelegate.dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+        [appDelegate.simpleDataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
             SimpleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"SimpleEntity" inManagedObjectContext:workerContext];
             
             entity.name = [NSString stringWithFormat:@"SimpleEntity_%lu", idx];

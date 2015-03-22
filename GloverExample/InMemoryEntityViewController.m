@@ -16,6 +16,12 @@
 
 @implementation InMemoryEntityViewController
 
+- (NSManagedObjectContext *)managedObjectContext {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    return appDelegate.complexDataManager.managedObjectContext;
+}
+
 - (NSFetchRequest *)fetchRequest {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"InMemoryEntity"];
     fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
@@ -27,8 +33,8 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        [appDelegate.dataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
-            InMemoryEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"InMemoryEntity" inManagedObjectContext:appDelegate.dataManager.managedObjectContext];
+        [appDelegate.complexDataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
+            InMemoryEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"InMemoryEntity" inManagedObjectContext:workerContext];
             
             entity.name = [NSString stringWithFormat:@"InMemoryEntity_%lu", idx];
         }];
