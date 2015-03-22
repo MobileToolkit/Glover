@@ -91,8 +91,8 @@ If you need to process a lot of CoreData changes & maintain your app's UI respon
 GVRDataManager *dataManager = [[GVRDataManager alloc] initWithConfiguration:[GVRDataManagerConfiguration defaultConfiguration]];
 
 for ( NSUInteger idx = 0; idx < 10000; idx++ ) {
-        [dataManager dataOperationWithBlock:^(NSManagedObjectContext *context) {
-            // here you should do all changes (make sure you use workerContext for those)
-        }];
-    }
+  [dataManager dataOperationWithBlock:^(NSManagedObjectContext *context) {
+    // here you should do all changes (make sure you use workerContext for those)
+  }];
+}
 ```
