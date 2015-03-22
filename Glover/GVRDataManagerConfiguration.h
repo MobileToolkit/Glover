@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString *const GVRDataManagerConfigurationPersistentStoreTypeKey;
-FOUNDATION_EXPORT NSString *const GVRDataManagerConfigurationPersistentStoreConfigurationKey;
-FOUNDATION_EXPORT NSString *const GVRDataManagerConfigurationPersistentStoreURLKey;
-FOUNDATION_EXPORT NSString *const GVRDataManagerConfigurationPersistentStoreOptionsKey;
+FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreTypeKey;
+FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreConfigurationKey;
+FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreURLKey;
+FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreOptionsKey;
 
 @interface GVRDataManagerConfiguration : NSObject
 

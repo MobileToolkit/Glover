@@ -10,24 +10,24 @@
 
 #import "GVRDataManager.h"
 
-NSString *const GVRDataManagerConfigurationPersistentStoreTypeKey = @"org.mobiletoolkit.glover.PersistentStoreTypeKey";
-NSString *const GVRDataManagerConfigurationPersistentStoreConfigurationKey = @"org.mobiletoolkit.glover.PersistentStoreConfigurationKey";
-NSString *const GVRDataManagerConfigurationPersistentStoreURLKey = @"org.mobiletoolkit.glover.PersistentStoreURLKey";
-NSString *const GVRDataManagerConfigurationPersistentStoreOptionsKey = @"org.mobiletoolkit.glover.PersistentStoreOptionsKey";
+NSString *const GVRDataManagerConfiguration_PersistentStoreTypeKey = @"org.mobiletoolkit.glover.PersistentStoreTypeKey";
+NSString *const GVRDataManagerConfiguration_PersistentStoreConfigurationKey = @"org.mobiletoolkit.glover.PersistentStoreConfigurationKey";
+NSString *const GVRDataManagerConfiguration_PersistentStoreURLKey = @"org.mobiletoolkit.glover.PersistentStoreURLKey";
+NSString *const GVRDataManagerConfiguration_PersistentStoreOptionsKey = @"org.mobiletoolkit.glover.PersistentStoreOptionsKey";
 
 @implementation GVRDataManagerConfiguration
 
 + (instancetype)defaultConfiguration {
-    return [[GVRDataManagerConfiguration alloc] init];
+    return [GVRDataManagerConfiguration singleSQLiteStoreConfiguration];
 }
 
 + (instancetype)singleSQLiteStoreConfiguration {
-    GVRDataManagerConfiguration *configuration = [GVRDataManagerConfiguration defaultConfiguration];
+    GVRDataManagerConfiguration *configuration = [[GVRDataManagerConfiguration alloc] init];
     
     configuration.persistentStores = @[
         @{
-            GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
-            GVRDataManagerConfigurationPersistentStoreTypeKey: NSSQLiteStoreType
+            GVRDataManagerConfiguration_PersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
+            GVRDataManagerConfiguration_PersistentStoreTypeKey: NSSQLiteStoreType
         }
     ];
     
@@ -35,12 +35,12 @@ NSString *const GVRDataManagerConfigurationPersistentStoreOptionsKey = @"org.mob
 }
 
 + (instancetype)singleBinaryStoreConfiguration {
-    GVRDataManagerConfiguration *configuration = [GVRDataManagerConfiguration defaultConfiguration];
+    GVRDataManagerConfiguration *configuration = [[GVRDataManagerConfiguration alloc] init];
     
     configuration.persistentStores = @[
         @{
-            GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
-            GVRDataManagerConfigurationPersistentStoreTypeKey: NSBinaryStoreType
+            GVRDataManagerConfiguration_PersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.bin"],
+            GVRDataManagerConfiguration_PersistentStoreTypeKey: NSBinaryStoreType
         }
     ];
     
@@ -48,12 +48,11 @@ NSString *const GVRDataManagerConfigurationPersistentStoreOptionsKey = @"org.mob
 }
 
 + (instancetype)singleInMemoryStoreConfiguration {
-    GVRDataManagerConfiguration *configuration = [GVRDataManagerConfiguration defaultConfiguration];
+    GVRDataManagerConfiguration *configuration = [[GVRDataManagerConfiguration alloc] init];
     
     configuration.persistentStores = @[
         @{
-            GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
-            GVRDataManagerConfigurationPersistentStoreTypeKey: NSInMemoryStoreType
+            GVRDataManagerConfiguration_PersistentStoreTypeKey: NSInMemoryStoreType
         }
     ];
     

@@ -52,17 +52,17 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
         if ( 0 == __configuration.persistentStores.count ) {
             __configuration.persistentStores = @[
                 @{
-                    GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
-                    GVRDataManagerConfigurationPersistentStoreTypeKey: NSSQLiteStoreType
+                    GVRDataManagerConfiguration_PersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverDB.sqlite"],
+                    GVRDataManagerConfiguration_PersistentStoreTypeKey: NSSQLiteStoreType
                 }
             ];
         }
         
         [__configuration.persistentStores enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSURL *storeURL = obj[GVRDataManagerConfigurationPersistentStoreURLKey];
-            NSString *storeType = obj[GVRDataManagerConfigurationPersistentStoreTypeKey];
-            NSString *storeConfiguration = obj[GVRDataManagerConfigurationPersistentStoreConfigurationKey];
-            NSDictionary *storeOptions = obj[GVRDataManagerConfigurationPersistentStoreOptionsKey];
+            NSURL *storeURL = obj[GVRDataManagerConfiguration_PersistentStoreURLKey];
+            NSString *storeType = obj[GVRDataManagerConfiguration_PersistentStoreTypeKey];
+            NSString *storeConfiguration = obj[GVRDataManagerConfiguration_PersistentStoreConfigurationKey];
+            NSDictionary *storeOptions = obj[GVRDataManagerConfiguration_PersistentStoreOptionsKey];
             
             NSError *error = nil;
             if ( nil == [_persistentStoreCoordinator addPersistentStoreWithType:storeType configuration:storeConfiguration URL:storeURL options:storeOptions error:&error] ) {
@@ -146,11 +146,11 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
 }
 
 /*!Creates a temporary worker context (if needed) & performs on it a data operation
- \param workerContextBlock Asynchronously performs a given block on the worker context's queue.
+ \param block Asynchronously performs a given block on the worker context's queue.
  
  You can use this method to process large amounts of CoreData changes & maintain UI responsiveness.
  */
-- (void)dataOperationWithBlock:(void (^)(NSManagedObjectContext *workerContext))workerContextBlock {
+- (void)dataOperationWithBlock:(void (^)(NSManagedObjectContext *context))block {
     if ( nil == __workerContext ) {
         __workerContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         __workerContext.parentContext = self.managedObjectContext;
@@ -158,7 +158,7 @@ NSString *const GVRErrorDomain = @"org.mobiletoolkit.ios.glover";
     }
     
     [__workerContext performBlock:^{
-        workerContextBlock(self.managedObjectContext);
+        block(self.managedObjectContext);
         
         if ( [__workerContext hasChanges] ) {
 //            NSLog(@"SAVING: worker context on Thread: %@", NSThread.currentThread);

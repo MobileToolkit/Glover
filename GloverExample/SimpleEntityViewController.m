@@ -33,10 +33,10 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        [appDelegate.simpleDataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
-            SimpleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"SimpleEntity" inManagedObjectContext:workerContext];
+        [appDelegate.simpleDataManager dataOperationWithBlock:^(NSManagedObjectContext *context) {
+            SimpleEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"SimpleEntity" inManagedObjectContext:context];
             
-            entity.name = [NSString stringWithFormat:@"SimpleEntity_%lu", idx];
+            entity.name = [NSString stringWithFormat:@"SimpleEntity_%lu", (unsigned long)idx];
         }];
     }
 }

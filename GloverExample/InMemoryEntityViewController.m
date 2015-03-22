@@ -33,10 +33,10 @@
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     for ( NSUInteger idx = 0; idx < 1000; idx++ ) {
-        [appDelegate.complexDataManager dataOperationWithBlock:^(NSManagedObjectContext *workerContext) {
-            InMemoryEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"InMemoryEntity" inManagedObjectContext:workerContext];
+        [appDelegate.complexDataManager dataOperationWithBlock:^(NSManagedObjectContext *context) {
+            InMemoryEntity *entity = [NSEntityDescription insertNewObjectForEntityForName:@"InMemoryEntity" inManagedObjectContext:context];
             
-            entity.name = [NSString stringWithFormat:@"InMemoryEntity_%lu", idx];
+            entity.name = [NSString stringWithFormat:@"InMemoryEntity_%lu", (unsigned long)idx];
         }];
     }
 }

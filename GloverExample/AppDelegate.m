@@ -30,13 +30,13 @@
         GVRDataManagerConfiguration *config = [GVRDataManagerConfiguration defaultConfiguration];
         config.persistentStores = @[
             @{
-                GVRDataManagerConfigurationPersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverPersistedEntities.sqlite"],
-                GVRDataManagerConfigurationPersistentStoreTypeKey: NSSQLiteStoreType,
-                GVRDataManagerConfigurationPersistentStoreConfigurationKey: @"PersistedEntities"
+                GVRDataManagerConfiguration_PersistentStoreURLKey: [[GVRDataManager applicationDocumentsDirectory] URLByAppendingPathComponent:@"gloverPersistedEntities.sqlite"],
+                GVRDataManagerConfiguration_PersistentStoreTypeKey: NSSQLiteStoreType,
+                GVRDataManagerConfiguration_PersistentStoreConfigurationKey: @"PersistedEntities"
             },
             @{
-                GVRDataManagerConfigurationPersistentStoreTypeKey: NSInMemoryStoreType,
-                GVRDataManagerConfigurationPersistentStoreConfigurationKey: @"InMemoryEntities"
+                GVRDataManagerConfiguration_PersistentStoreTypeKey: NSInMemoryStoreType,
+                GVRDataManagerConfiguration_PersistentStoreConfigurationKey: @"InMemoryEntities"
             }
         ];
         
