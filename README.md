@@ -1,6 +1,6 @@
 # Glover
 
-Multi-layered data manager that utilises CoreData by using multiple contexts & async saving.
+This framework reduces complexity of CoreData's setup when one would want to use multiple context approach to keep the UI responsive even when there are 1000's of data changes being processed. It is achieved by using multiple contexts on separate threads & async saving.
 
 ## Information
 
