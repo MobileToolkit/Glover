@@ -141,6 +141,7 @@
 		E9330AF91A98FAF90088623D /* ExampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleEntity.m; sourceTree = "<group>"; };
 		E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVRDataManagerConfiguration.h; sourceTree = "<group>"; };
 		E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVRDataManagerConfiguration.m; sourceTree = "<group>"; };
+		E98276271AC2F8FA00EFB83D /* FatLibraryBuildScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = FatLibraryBuildScript.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +264,7 @@
 		E9330A721A98B7490088623D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E98276271AC2F8FA00EFB83D /* FatLibraryBuildScript.sh */,
 				E9330A731A98B7490088623D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -615,7 +617,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset +u\n\n# Avoid recursively calling this script\nif [[ $GVR_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport GVR_MASTER_SCRIPT_RUNNING=1\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nGVR_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nGVR_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$GVR_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nGVR_OTHER_PLATFORM=iphonesimulator\nelse\nGVR_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$GVR_SDK_PLATFORM$ ]]\nthen\nGVR_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${GVR_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${GVR_OTHER_PLATFORM}${GVR_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\nGVR_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}\nif [ ! -d \"${GVR_BUILD_DIR}\" ]; then\nmkdir \"${GVR_BUILD_DIR}\"\nfi\n\ncp -a \"${BUILT_PRODUCTS_DIR}/${PROJECT_NAME}.framework\" \"${GVR_BUILD_DIR}\"\n\n# Smash the two binary libraries into one fat binary\nxcrun lipo -create \"${GVR_BUILD_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${GVR_OTHER_BUILT_PRODUCTS_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" -output \"${GVR_BUILD_DIR}/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Open Finder window with files\nopen \"${GVR_BUILD_DIR}\"\n";
+			shellScript = "${SRCROOT}/Glover/FatLibraryBuildScript.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -793,7 +795,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -832,7 +834,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -851,7 +853,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Glover/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -868,7 +869,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Glover/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
