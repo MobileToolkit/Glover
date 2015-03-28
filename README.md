@@ -9,7 +9,7 @@ This framework reduces complexity of CoreData's setup when one would want to use
 ## Getting Help
 
 * Please ask the community on [Stack Overflow](http://stackoverflow.com/) for help if you have any questions. Please do not post usage questions on the issue tracker.
-* Please report bugs on the [issue tracker](https://github.com/MobileToolkit/Glover-iOS/issues) but read the "getting help" section in the wiki first.
+* Please report bugs on the [issue tracker](https://github.com/MobileToolkit/Glover-iOS/issues).
 
 ## Installation
 
