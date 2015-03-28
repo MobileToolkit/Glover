@@ -15,7 +15,8 @@ This framework reduces complexity of CoreData's setup when one would want to use
 
 Latest stable release is always available in [releases](https://github.com/MobileToolkit/Glover-iOS/releases) (both binary & source).
 
-The recommended way to install Glover is to download the binary release, unzip it & just drag & drop **Glover.framework** into your Xcode project.
+The recommended way to install Glover is to download the binary release.
+After downloading please unzip it and just drag & drop **Glover.framework** into your Xcode project.
 
 ## Getting Started
 
