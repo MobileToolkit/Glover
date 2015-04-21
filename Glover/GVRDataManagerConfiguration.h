@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreTypeKey;
 FOUNDATION_EXPORT NSString *const GVRDataManagerConfiguration_PersistentStoreConfigurationKey;

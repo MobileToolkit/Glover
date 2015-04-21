@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Glover/Glover.h>
+@import UIKit;
+@import Glover;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

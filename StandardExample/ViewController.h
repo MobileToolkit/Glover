@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreData/NSFetchedResultsController.h>
+@import UIKit;
+@import CoreData;
 
 @interface ViewController : UIViewController <NSFetchedResultsControllerDelegate, UITableViewDataSource>
 

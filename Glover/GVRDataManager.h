@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 mobiletoolkit.org. All rights reserved.
 //
 
-#import <CoreData/CoreData.h>
+@import CoreData;
 
 #import "GVRDataManagerConfiguration.h"
 

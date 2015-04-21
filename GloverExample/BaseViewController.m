@@ -8,8 +8,6 @@
 
 #import "BaseViewController.h"
 
-#import <CoreData/CoreData.h>
-
 @interface BaseViewController ()
 
 @end
