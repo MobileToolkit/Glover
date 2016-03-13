@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9728C381C95E5D800333D38 /* PersistentStoreConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */; };
 		E9F58A021C947B670074D690 /* Glover.h in Headers */ = {isa = PBXBuildFile; fileRef = E9F58A011C947B670074D690 /* Glover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9F58A091C947B670074D690 /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F589FE1C947B670074D690 /* Glover.framework */; };
 		E9F58A0E1C947B680074D690 /* GloverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F58A0D1C947B670074D690 /* GloverTests.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreConfiguration.swift; sourceTree = "<group>"; };
 		E9F589FE1C947B670074D690 /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Glover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F58A011C947B670074D690 /* Glover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glover.h; sourceTree = "<group>"; };
 		E9F58A031C947B670074D690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				E9F58A5E1C94C9030074D690 /* Supporting Files */,
 				E9F58A181C947D4C0074D690 /* Manager.swift */,
 				E9F58A1A1C947D5D0074D690 /* Configuration.swift */,
+				E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */,
 			);
 			path = Glover;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				E9F58A1B1C947D5D0074D690 /* Configuration.swift in Sources */,
 				E9F58A191C947D4C0074D690 /* Manager.swift in Sources */,
 				E9F58A5D1C94C8D60074D690 /* Glover.swift in Sources */,
+				E9728C381C95E5D800333D38 /* PersistentStoreConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

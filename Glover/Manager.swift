@@ -7,11 +7,43 @@
 //
 
 import Foundation
+import CoreData
 
 public class Manager {
     
-    public init(configuration: Configuration) {
+    var configuration: Configuration
+    
+    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.configuration.model)
         
+        for persistentStoreConfiguration in self.configuration.persistentStoreConfigurations {
+            do {
+                try coordinator.addPersistentStoreWithType(persistentStoreConfiguration.type.CoreDataStoreType, configuration: persistentStoreConfiguration.configuration, URL: persistentStoreConfiguration.url, options: persistentStoreConfiguration.options)
+            } catch {
+                let userInfo = [
+                    NSLocalizedDescriptionKey: "Failed to initialize the persistent store: [ type: \(persistentStoreConfiguration.type) | configuration: \(persistentStoreConfiguration.configuration) | URL: \(persistentStoreConfiguration.url) | options: \(persistentStoreConfiguration.options) ]",
+                    NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data.",
+                    NSUnderlyingErrorKey: error as NSError
+                ]
+                
+                let wrappedError = NSError(domain: errorDomain, code: 9999, userInfo: userInfo)
+
+                NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            }
+        }
+        
+        return coordinator
+    }()
+    
+    public lazy var managedObjectContext: NSManagedObjectContext = {
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        
+        return managedObjectContext
+    }()
+    
+    public init(configuration: Configuration) {
+        self.configuration = configuration
     }
     
 }

@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public let errorDomain = "org.mobiletoolkit.ios.glover"
+
+public var manager: Manager!
+
+public func initialize(configuration: Configuration) {
+    manager = Manager(configuration: configuration)
+}
