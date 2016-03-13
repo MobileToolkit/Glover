@@ -15,3 +15,7 @@ public var manager: Manager!
 public func initialize(configuration: Configuration) {
     manager = Manager(configuration: configuration)
 }
+
+public func saveContext() {
+    manager.saveContext()
+}
