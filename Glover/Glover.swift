@@ -8,14 +8,18 @@
 
 import Foundation
 
-public let errorDomain = "org.mobiletoolkit.ios.glover"
-
-public var manager: Manager!
-
-public func initialize(configuration: Configuration) {
-    manager = Manager(configuration: configuration)
+public struct Errors {
+    public static let Domain = "org.mobiletoolkit.ios.glover"
+    
+    public static let PersistentStoreCreationErrorCode = -1000
 }
 
-public func saveContext() {
-    manager.saveContext()
-}
+//public var manager: Manager!
+//
+//public func initialize(configuration: Configuration) {
+//    manager = Manager(configuration: configuration)
+//}
+//
+//public func saveContext() {
+//    manager.saveContext()
+//}

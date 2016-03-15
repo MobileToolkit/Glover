@@ -15,7 +15,7 @@ public class Configuration {
         return NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
     }()
     
-    var model: NSManagedObjectModel!
+    var model: NSManagedObjectModel
     
     var persistentStoreConfigurations: [PersistentStoreConfiguration] = []
     
@@ -23,32 +23,29 @@ public class Configuration {
         persistentStoreConfigurations.append(persistentStoreConfiguration)
     }
     
-    public class func defaultConfiguration() -> Configuration {
-        return Configuration.singleSQLiteStoreConfiguration()
+    public init(model: NSManagedObjectModel) {
+        self.model = model
     }
     
-    public class func singleSQLiteStoreConfiguration() -> Configuration {
-        let configuration = Configuration()
+    public class func singleSQLiteStoreConfiguration(model: NSManagedObjectModel) -> Configuration {
+        let configuration = Configuration(model: model)
 
-        configuration.model = NSManagedObjectModel.mergedModelFromBundles(nil)
         configuration.addPersistentStoreConfiguration(PersistentStoreConfiguration(type: .SQLite, url: configuration.applicationDocumentsDirectory.URLByAppendingPathComponent("gloverDB.sqlite")))
         
         return configuration
     }
     
-    public class func singleBinaryStoreConfiguration() -> Configuration {
-        let configuration = Configuration()
+    public class func singleBinaryStoreConfiguration(model: NSManagedObjectModel) -> Configuration {
+        let configuration = Configuration(model: model)
         
-        configuration.model = NSManagedObjectModel.mergedModelFromBundles(nil)
         configuration.addPersistentStoreConfiguration(PersistentStoreConfiguration(type: .Binary, url: configuration.applicationDocumentsDirectory.URLByAppendingPathComponent("gloverDB.bin")))
         
         return configuration
     }
     
-    public class func singleInMemoryStoreConfiguration() -> Configuration {
-        let configuration = Configuration()
+    public class func singleInMemoryStoreConfiguration(model: NSManagedObjectModel) -> Configuration {
+        let configuration = Configuration(model: model)
         
-        configuration.model = NSManagedObjectModel.mergedModelFromBundles(nil)
         configuration.addPersistentStoreConfiguration(PersistentStoreConfiguration(type: .InMemory))
         
         return configuration

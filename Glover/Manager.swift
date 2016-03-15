@@ -26,9 +26,9 @@ public class Manager {
                     NSUnderlyingErrorKey: error as NSError
                 ]
                 
-                let wrappedError = NSError(domain: errorDomain, code: 9999, userInfo: userInfo)
+                let wrappedError = NSError(domain: Errors.Domain, code: Errors.PersistentStoreCreationErrorCode, userInfo: userInfo)
 
-                NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+                NSLog("Glover: Unresolved error \(wrappedError), \(wrappedError.userInfo)")
             }
         }
         
