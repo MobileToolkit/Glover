@@ -18,7 +18,7 @@ public class Manager {
         
         for persistentStoreConfiguration in self.configuration.persistentStoreConfigurations {
             do {
-                try coordinator.addPersistentStoreWithType(persistentStoreConfiguration.type.CoreDataStoreType, configuration: persistentStoreConfiguration.configuration, URL: persistentStoreConfiguration.url, options: persistentStoreConfiguration.options)
+                try coordinator.addPersistentStoreWithType(persistentStoreConfiguration.type.toCoreDataStoreType(), configuration: persistentStoreConfiguration.configuration, URL: persistentStoreConfiguration.url, options: persistentStoreConfiguration.options)
             } catch {
                 let userInfo = [
                     NSLocalizedDescriptionKey: "Failed to initialize the persistent store: [ type: \(persistentStoreConfiguration.type) | configuration: \(persistentStoreConfiguration.configuration) | URL: \(persistentStoreConfiguration.url) | options: \(persistentStoreConfiguration.options) ]",
@@ -28,7 +28,7 @@ public class Manager {
                 
                 let wrappedError = NSError(domain: Errors.Domain, code: Errors.PersistentStoreCreationErrorCode, userInfo: userInfo)
 
-                NSLog("Glover: Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+                NSLog("GLOVER: Unresolved error \(wrappedError), \(wrappedError.userInfo)")
             }
         }
         
@@ -52,7 +52,7 @@ public class Manager {
                 try managedObjectContext.save()
             } catch {
                 let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                NSLog("GLOVER: Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
     }

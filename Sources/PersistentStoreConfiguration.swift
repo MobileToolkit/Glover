@@ -14,7 +14,7 @@ public enum PersistentStoreType: String {
     case Binary
     case InMemory
     
-    var CoreDataStoreType: String {
+    func toCoreDataStoreType() -> String {
         switch self {
         case .SQLite:
             return NSSQLiteStoreType

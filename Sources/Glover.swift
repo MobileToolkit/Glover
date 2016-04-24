@@ -9,8 +9,7 @@
 import Foundation
 
 public struct Errors {
-    public static let Domain = "org.mobiletoolkit.ios.glover"
-    
+    public static let Domain = "org.mobiletoolkit.ios.Glover"
     public static let PersistentStoreCreationErrorCode = -1000
 }
 
