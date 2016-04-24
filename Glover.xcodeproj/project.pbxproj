@@ -6,368 +6,102 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		E91E906F1AAC614F0046C823 /* GloverFramework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = E91E90721AAC614F0046C823 /* Build configuration list for PBXAggregateTarget "GloverFramework" */;
-			buildPhases = (
-				E91E90751AAC615C0046C823 /* Build Fat Library */,
-			);
-			dependencies = (
-				E91E90741AAC61570046C823 /* PBXTargetDependency */,
-			);
-			name = GloverFramework;
-			productName = GloverFramework;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		E91E905E1AAB32970046C823 /* PersistedEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */; };
-		E91E90611AAB32A70046C823 /* InMemoryEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */; };
-		E91E90671AAB334F0046C823 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90661AAB334F0046C823 /* BaseViewController.m */; };
-		E91E906A1AAB35EE0046C823 /* PersistedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E90691AAB35EE0046C823 /* PersistedEntity.m */; };
-		E91E906D1AAB35EE0046C823 /* InMemoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */; };
-		E92296D71AAB268A00E890AE /* ComplexModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */; };
-		E9330A751A98B7490088623D /* Glover.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A741A98B7490088623D /* Glover.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E9330A7B1A98B7490088623D /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9330A6F1A98B7490088623D /* Glover.framework */; };
-		E9330A821A98B7490088623D /* GloverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A811A98B7490088623D /* GloverTests.m */; };
-		E9330A921A98B94C0088623D /* GVRDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E9330A901A98B94C0088623D /* GVRDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330A911A98B94C0088623D /* GVRDataManager.m */; };
-		E9330AA31A98D4600088623D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA21A98D4600088623D /* main.m */; };
-		E9330AA61A98D4600088623D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA51A98D4600088623D /* AppDelegate.m */; };
-		E9330AA91A98D4600088623D /* SImpleModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */; };
-		E9330AAC1A98D4600088623D /* SimpleEntityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */; };
-		E9330AAF1A98D4600088623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9330AAD1A98D4600088623D /* Main.storyboard */; };
-		E9330AB11A98D4600088623D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9330AB01A98D4600088623D /* Images.xcassets */; };
-		E9330AB41A98D4600088623D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9330AB21A98D4600088623D /* LaunchScreen.xib */; };
-		E9330AC01A98D4600088623D /* GloverExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330ABF1A98D4600088623D /* GloverExampleTests.m */; };
-		E9330AC91A98D5120088623D /* SimpleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AC81A98D5120088623D /* SimpleEntity.m */; };
-		E9330ACA1A98D6240088623D /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9330A6F1A98B7490088623D /* Glover.framework */; };
-		E9330AD41A98F6280088623D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AD31A98F6280088623D /* main.m */; };
-		E9330AD71A98F6280088623D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AD61A98F6280088623D /* AppDelegate.m */; };
-		E9330ADA1A98F6280088623D /* StandardExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9330AD81A98F6280088623D /* StandardExample.xcdatamodeld */; };
-		E9330ADD1A98F6280088623D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330ADC1A98F6280088623D /* ViewController.m */; };
-		E9330AE01A98F6280088623D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9330ADE1A98F6280088623D /* Main.storyboard */; };
-		E9330AE21A98F6280088623D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9330AE11A98F6280088623D /* Images.xcassets */; };
-		E9330AE51A98F6280088623D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9330AE31A98F6280088623D /* LaunchScreen.xib */; };
-		E9330AF11A98F6280088623D /* StandardExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AF01A98F6280088623D /* StandardExampleTests.m */; };
-		E9330AFA1A98FAF90088623D /* ExampleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9330AF91A98FAF90088623D /* ExampleEntity.m */; };
-		E94674DD1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E94674DE1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */; };
+		E9728C381C95E5D800333D38 /* PersistentStoreConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */; };
+		E9F58A021C947B670074D690 /* Glover.h in Headers */ = {isa = PBXBuildFile; fileRef = E9F58A011C947B670074D690 /* Glover.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9F58A091C947B670074D690 /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F589FE1C947B670074D690 /* Glover.framework */; };
+		E9F58A0E1C947B680074D690 /* GloverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F58A0D1C947B670074D690 /* GloverTests.swift */; };
+		E9F58A191C947D4C0074D690 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F58A181C947D4C0074D690 /* Manager.swift */; };
+		E9F58A1B1C947D5D0074D690 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F58A1A1C947D5D0074D690 /* Configuration.swift */; };
+		E9F58A5D1C94C8D60074D690 /* Glover.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F58A5C1C94C8D60074D690 /* Glover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E91E90731AAC61570046C823 /* PBXContainerItemProxy */ = {
+		E9F58A0A1C947B670074D690 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E9330A661A98B7490088623D /* Project object */;
+			containerPortal = E9F589F51C947B670074D690 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E9330A6E1A98B7490088623D;
+			remoteGlobalIDString = E9F589FD1C947B670074D690;
 			remoteInfo = Glover;
-		};
-		E9330A7C1A98B7490088623D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9330A661A98B7490088623D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9330A6E1A98B7490088623D;
-			remoteInfo = Glover;
-		};
-		E9330ABA1A98D4600088623D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9330A661A98B7490088623D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9330A9D1A98D4600088623D;
-			remoteInfo = GloverExample;
-		};
-		E9330AEB1A98F6280088623D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E9330A661A98B7490088623D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E9330ACE1A98F6270088623D;
-			remoteInfo = StandardExample;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E91E905C1AAB32970046C823 /* PersistedEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistedEntityViewController.h; sourceTree = "<group>"; };
-		E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistedEntityViewController.m; sourceTree = "<group>"; };
-		E91E905F1AAB32A70046C823 /* InMemoryEntityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMemoryEntityViewController.h; sourceTree = "<group>"; };
-		E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InMemoryEntityViewController.m; sourceTree = "<group>"; };
-		E91E90651AAB334F0046C823 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		E91E90661AAB334F0046C823 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		E91E90681AAB35EE0046C823 /* PersistedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistedEntity.h; sourceTree = "<group>"; };
-		E91E90691AAB35EE0046C823 /* PersistedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistedEntity.m; sourceTree = "<group>"; };
-		E91E906B1AAB35EE0046C823 /* InMemoryEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InMemoryEntity.h; sourceTree = "<group>"; };
-		E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InMemoryEntity.m; sourceTree = "<group>"; };
-		E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComplexModel.xcdatamodel; sourceTree = "<group>"; };
-		E9330A6F1A98B7490088623D /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Glover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330A731A98B7490088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330A741A98B7490088623D /* Glover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glover.h; sourceTree = "<group>"; };
-		E9330A7A1A98B7490088623D /* GloverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GloverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330A801A98B7490088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330A811A98B7490088623D /* GloverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GloverTests.m; sourceTree = "<group>"; };
-		E9330A901A98B94C0088623D /* GVRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVRDataManager.h; sourceTree = "<group>"; };
-		E9330A911A98B94C0088623D /* GVRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVRDataManager.m; sourceTree = "<group>"; };
-		E9330A9E1A98D4600088623D /* GloverExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GloverExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330AA11A98D4600088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330AA21A98D4600088623D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E9330AA41A98D4600088623D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E9330AA51A98D4600088623D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SImpleModel.xcdatamodel; sourceTree = "<group>"; };
-		E9330AAA1A98D4600088623D /* SimpleEntityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleEntityViewController.h; sourceTree = "<group>"; };
-		E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleEntityViewController.m; sourceTree = "<group>"; };
-		E9330AAE1A98D4600088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9330AB01A98D4600088623D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E9330AB31A98D4600088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E9330AB91A98D4600088623D /* GloverExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GloverExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330ABE1A98D4600088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330ABF1A98D4600088623D /* GloverExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GloverExampleTests.m; sourceTree = "<group>"; };
-		E9330AC71A98D5120088623D /* SimpleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleEntity.h; sourceTree = "<group>"; };
-		E9330AC81A98D5120088623D /* SimpleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleEntity.m; sourceTree = "<group>"; };
-		E9330ACF1A98F6270088623D /* StandardExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StandardExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330AD21A98F6280088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330AD31A98F6280088623D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E9330AD51A98F6280088623D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E9330AD61A98F6280088623D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E9330AD91A98F6280088623D /* StandardExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StandardExample.xcdatamodel; sourceTree = "<group>"; };
-		E9330ADB1A98F6280088623D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9330ADC1A98F6280088623D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E9330ADF1A98F6280088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E9330AE11A98F6280088623D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E9330AE41A98F6280088623D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		E9330AEA1A98F6280088623D /* StandardExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StandardExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9330AEF1A98F6280088623D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E9330AF01A98F6280088623D /* StandardExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StandardExampleTests.m; sourceTree = "<group>"; };
-		E9330AF81A98FAF90088623D /* ExampleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleEntity.h; sourceTree = "<group>"; };
-		E9330AF91A98FAF90088623D /* ExampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleEntity.m; sourceTree = "<group>"; };
-		E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVRDataManagerConfiguration.h; sourceTree = "<group>"; };
-		E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVRDataManagerConfiguration.m; sourceTree = "<group>"; };
-		E98276271AC2F8FA00EFB83D /* FatLibraryBuildScript.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = FatLibraryBuildScript.sh; sourceTree = "<group>"; };
+		E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStoreConfiguration.swift; sourceTree = "<group>"; };
+		E9F589FE1C947B670074D690 /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Glover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F58A011C947B670074D690 /* Glover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Glover.h; sourceTree = "<group>"; };
+		E9F58A031C947B670074D690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F58A081C947B670074D690 /* GloverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GloverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F58A0D1C947B670074D690 /* GloverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloverTests.swift; sourceTree = "<group>"; };
+		E9F58A0F1C947B680074D690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F58A181C947D4C0074D690 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		E9F58A1A1C947D5D0074D690 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		E9F58A5C1C94C8D60074D690 /* Glover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E9330A6B1A98B7490088623D /* Frameworks */ = {
+		E9F589FA1C947B670074D690 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9330A771A98B7490088623D /* Frameworks */ = {
+		E9F58A051C947B670074D690 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9330A7B1A98B7490088623D /* Glover.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330A9B1A98D4600088623D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330ACA1A98D6240088623D /* Glover.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AB61A98D4600088623D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330ACC1A98F6270088623D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AE71A98F6280088623D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E9F58A091C947B670074D690 /* Glover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E91E905B1AAB2D930046C823 /* ViewControllers */ = {
+		E9F589F41C947B670074D690 = {
 			isa = PBXGroup;
 			children = (
-				E91E90651AAB334F0046C823 /* BaseViewController.h */,
-				E91E90661AAB334F0046C823 /* BaseViewController.m */,
-				E9330AAA1A98D4600088623D /* SimpleEntityViewController.h */,
-				E9330AAB1A98D4600088623D /* SimpleEntityViewController.m */,
-				E91E905C1AAB32970046C823 /* PersistedEntityViewController.h */,
-				E91E905D1AAB32970046C823 /* PersistedEntityViewController.m */,
-				E91E905F1AAB32A70046C823 /* InMemoryEntityViewController.h */,
-				E91E90601AAB32A70046C823 /* InMemoryEntityViewController.m */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		E91E906E1AAB35F70046C823 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */,
-				E9330AC71A98D5120088623D /* SimpleEntity.h */,
-				E9330AC81A98D5120088623D /* SimpleEntity.m */,
-				E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */,
-				E91E906B1AAB35EE0046C823 /* InMemoryEntity.h */,
-				E91E906C1AAB35EE0046C823 /* InMemoryEntity.m */,
-				E91E90681AAB35EE0046C823 /* PersistedEntity.h */,
-				E91E90691AAB35EE0046C823 /* PersistedEntity.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		E9330A651A98B7490088623D = {
-			isa = PBXGroup;
-			children = (
-				E9330A711A98B7490088623D /* Glover */,
-				E9330A7E1A98B7490088623D /* GloverTests */,
-				E9330A9F1A98D4600088623D /* GloverExample */,
-				E9330ABC1A98D4600088623D /* GloverExampleTests */,
-				E9330AD01A98F6270088623D /* StandardExample */,
-				E9330AED1A98F6280088623D /* StandardExampleTests */,
-				E9330A701A98B7490088623D /* Products */,
+				E9F58A001C947B670074D690 /* Sources */,
+				E9F58A0C1C947B670074D690 /* Tests */,
+				E9F589FF1C947B670074D690 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E9330A701A98B7490088623D /* Products */ = {
+		E9F589FF1C947B670074D690 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9330A6F1A98B7490088623D /* Glover.framework */,
-				E9330A7A1A98B7490088623D /* GloverTests.xctest */,
-				E9330A9E1A98D4600088623D /* GloverExample.app */,
-				E9330AB91A98D4600088623D /* GloverExampleTests.xctest */,
-				E9330ACF1A98F6270088623D /* StandardExample.app */,
-				E9330AEA1A98F6280088623D /* StandardExampleTests.xctest */,
+				E9F589FE1C947B670074D690 /* Glover.framework */,
+				E9F58A081C947B670074D690 /* GloverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9330A711A98B7490088623D /* Glover */ = {
+		E9F58A001C947B670074D690 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E94674DB1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h */,
-				E94674DC1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m */,
-				E9330A901A98B94C0088623D /* GVRDataManager.h */,
-				E9330A911A98B94C0088623D /* GVRDataManager.m */,
-				E9330A741A98B7490088623D /* Glover.h */,
-				E9330A721A98B7490088623D /* Supporting Files */,
+				E9F58A5C1C94C8D60074D690 /* Glover.swift */,
+				E9F58A181C947D4C0074D690 /* Manager.swift */,
+				E9F58A1A1C947D5D0074D690 /* Configuration.swift */,
+				E9728C371C95E5D800333D38 /* PersistentStoreConfiguration.swift */,
+				E9F58A5E1C94C9030074D690 /* Supporting Files */,
 			);
-			path = Glover;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		E9330A721A98B7490088623D /* Supporting Files */ = {
+		E9F58A0C1C947B670074D690 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E98276271AC2F8FA00EFB83D /* FatLibraryBuildScript.sh */,
-				E9330A731A98B7490088623D /* Info.plist */,
+				E9F58A0D1C947B670074D690 /* GloverTests.swift */,
+				E9F58A0F1C947B680074D690 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		E9330A7E1A98B7490088623D /* GloverTests */ = {
+		E9F58A5E1C94C9030074D690 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9330A811A98B7490088623D /* GloverTests.m */,
-				E9330A7F1A98B7490088623D /* Supporting Files */,
-			);
-			path = GloverTests;
-			sourceTree = "<group>";
-		};
-		E9330A7F1A98B7490088623D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9330A801A98B7490088623D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E9330A9F1A98D4600088623D /* GloverExample */ = {
-			isa = PBXGroup;
-			children = (
-				E91E906E1AAB35F70046C823 /* Model */,
-				E91E905B1AAB2D930046C823 /* ViewControllers */,
-				E9330AA41A98D4600088623D /* AppDelegate.h */,
-				E9330AA51A98D4600088623D /* AppDelegate.m */,
-				E9330AAD1A98D4600088623D /* Main.storyboard */,
-				E9330AB01A98D4600088623D /* Images.xcassets */,
-				E9330AB21A98D4600088623D /* LaunchScreen.xib */,
-				E9330AA01A98D4600088623D /* Supporting Files */,
-			);
-			path = GloverExample;
-			sourceTree = "<group>";
-		};
-		E9330AA01A98D4600088623D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AA11A98D4600088623D /* Info.plist */,
-				E9330AA21A98D4600088623D /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E9330ABC1A98D4600088623D /* GloverExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				E9330ABF1A98D4600088623D /* GloverExampleTests.m */,
-				E9330ABD1A98D4600088623D /* Supporting Files */,
-			);
-			path = GloverExampleTests;
-			sourceTree = "<group>";
-		};
-		E9330ABD1A98D4600088623D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9330ABE1A98D4600088623D /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E9330AD01A98F6270088623D /* StandardExample */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AD51A98F6280088623D /* AppDelegate.h */,
-				E9330AD61A98F6280088623D /* AppDelegate.m */,
-				E9330ADB1A98F6280088623D /* ViewController.h */,
-				E9330ADC1A98F6280088623D /* ViewController.m */,
-				E9330ADE1A98F6280088623D /* Main.storyboard */,
-				E9330AE11A98F6280088623D /* Images.xcassets */,
-				E9330AE31A98F6280088623D /* LaunchScreen.xib */,
-				E9330AD81A98F6280088623D /* StandardExample.xcdatamodeld */,
-				E9330AF81A98FAF90088623D /* ExampleEntity.h */,
-				E9330AF91A98FAF90088623D /* ExampleEntity.m */,
-				E9330AD11A98F6280088623D /* Supporting Files */,
-			);
-			path = StandardExample;
-			sourceTree = "<group>";
-		};
-		E9330AD11A98F6280088623D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AD21A98F6280088623D /* Info.plist */,
-				E9330AD31A98F6280088623D /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E9330AED1A98F6280088623D /* StandardExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AF01A98F6280088623D /* StandardExampleTests.m */,
-				E9330AEE1A98F6280088623D /* Supporting Files */,
-			);
-			path = StandardExampleTests;
-			sourceTree = "<group>";
-		};
-		E9330AEE1A98F6280088623D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9330AEF1A98F6280088623D /* Info.plist */,
+				E9F58A011C947B670074D690 /* Glover.h */,
+				E9F58A031C947B670074D690 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -375,27 +109,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E9330A6C1A98B7490088623D /* Headers */ = {
+		E9F589FB1C947B670074D690 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9330A751A98B7490088623D /* Glover.h in Headers */,
-				E94674DD1ABE257000C4DFA2 /* GVRDataManagerConfiguration.h in Headers */,
-				E9330A921A98B94C0088623D /* GVRDataManager.h in Headers */,
+				E9F58A021C947B670074D690 /* Glover.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E9330A6E1A98B7490088623D /* Glover */ = {
+		E9F589FD1C947B670074D690 /* Glover */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9330A851A98B7490088623D /* Build configuration list for PBXNativeTarget "Glover" */;
+			buildConfigurationList = E9F58A121C947B680074D690 /* Build configuration list for PBXNativeTarget "Glover" */;
 			buildPhases = (
-				E9330A6A1A98B7490088623D /* Sources */,
-				E9330A6B1A98B7490088623D /* Frameworks */,
-				E9330A6C1A98B7490088623D /* Headers */,
-				E9330A6D1A98B7490088623D /* Resources */,
+				E9F589F91C947B670074D690 /* Sources */,
+				E9F589FA1C947B670074D690 /* Frameworks */,
+				E9F589FB1C947B670074D690 /* Headers */,
+				E9F589FC1C947B670074D690 /* Resources */,
+				E96309421CCCD48E00F4C238 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -403,199 +136,74 @@
 			);
 			name = Glover;
 			productName = Glover;
-			productReference = E9330A6F1A98B7490088623D /* Glover.framework */;
+			productReference = E9F589FE1C947B670074D690 /* Glover.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E9330A791A98B7490088623D /* GloverTests */ = {
+		E9F58A071C947B670074D690 /* GloverTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9330A881A98B7490088623D /* Build configuration list for PBXNativeTarget "GloverTests" */;
+			buildConfigurationList = E9F58A151C947B680074D690 /* Build configuration list for PBXNativeTarget "GloverTests" */;
 			buildPhases = (
-				E9330A761A98B7490088623D /* Sources */,
-				E9330A771A98B7490088623D /* Frameworks */,
-				E9330A781A98B7490088623D /* Resources */,
+				E9F58A041C947B670074D690 /* Sources */,
+				E9F58A051C947B670074D690 /* Frameworks */,
+				E9F58A061C947B670074D690 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E9330A7D1A98B7490088623D /* PBXTargetDependency */,
+				E9F58A0B1C947B670074D690 /* PBXTargetDependency */,
 			);
 			name = GloverTests;
 			productName = GloverTests;
-			productReference = E9330A7A1A98B7490088623D /* GloverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E9330A9D1A98D4600088623D /* GloverExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9330AC11A98D4600088623D /* Build configuration list for PBXNativeTarget "GloverExample" */;
-			buildPhases = (
-				E9330A9A1A98D4600088623D /* Sources */,
-				E9330A9B1A98D4600088623D /* Frameworks */,
-				E9330A9C1A98D4600088623D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GloverExample;
-			productName = GloverExample;
-			productReference = E9330A9E1A98D4600088623D /* GloverExample.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E9330AB81A98D4600088623D /* GloverExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9330AC41A98D4600088623D /* Build configuration list for PBXNativeTarget "GloverExampleTests" */;
-			buildPhases = (
-				E9330AB51A98D4600088623D /* Sources */,
-				E9330AB61A98D4600088623D /* Frameworks */,
-				E9330AB71A98D4600088623D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9330ABB1A98D4600088623D /* PBXTargetDependency */,
-			);
-			name = GloverExampleTests;
-			productName = GloverExampleTests;
-			productReference = E9330AB91A98D4600088623D /* GloverExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E9330ACE1A98F6270088623D /* StandardExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9330AF21A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExample" */;
-			buildPhases = (
-				E9330ACB1A98F6270088623D /* Sources */,
-				E9330ACC1A98F6270088623D /* Frameworks */,
-				E9330ACD1A98F6270088623D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = StandardExample;
-			productName = StandardExample;
-			productReference = E9330ACF1A98F6270088623D /* StandardExample.app */;
-			productType = "com.apple.product-type.application";
-		};
-		E9330AE91A98F6280088623D /* StandardExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9330AF51A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExampleTests" */;
-			buildPhases = (
-				E9330AE61A98F6280088623D /* Sources */,
-				E9330AE71A98F6280088623D /* Frameworks */,
-				E9330AE81A98F6280088623D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9330AEC1A98F6280088623D /* PBXTargetDependency */,
-			);
-			name = StandardExampleTests;
-			productName = StandardExampleTests;
-			productReference = E9330AEA1A98F6280088623D /* StandardExampleTests.xctest */;
+			productReference = E9F58A081C947B670074D690 /* GloverTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E9330A661A98B7490088623D /* Project object */ = {
+		E9F589F51C947B670074D690 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = GVR;
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = mobiletoolkit.org;
 				TargetAttributes = {
-					E91E906F1AAC614F0046C823 = {
-						CreatedOnToolsVersion = 6.1.1;
+					E9F589FD1C947B670074D690 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Y958SVCHZ8;
 					};
-					E9330A6E1A98B7490088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					E9330A791A98B7490088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					E9330A9D1A98D4600088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					E9330AB81A98D4600088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = E9330A9D1A98D4600088623D;
-					};
-					E9330ACE1A98F6270088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					E9330AE91A98F6280088623D = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = E9330ACE1A98F6270088623D;
+					E9F58A071C947B670074D690 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = Y958SVCHZ8;
 					};
 				};
 			};
-			buildConfigurationList = E9330A691A98B7490088623D /* Build configuration list for PBXProject "Glover" */;
+			buildConfigurationList = E9F589F81C947B670074D690 /* Build configuration list for PBXProject "Glover" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
-			mainGroup = E9330A651A98B7490088623D;
-			productRefGroup = E9330A701A98B7490088623D /* Products */;
+			mainGroup = E9F589F41C947B670074D690;
+			productRefGroup = E9F589FF1C947B670074D690 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E9330A6E1A98B7490088623D /* Glover */,
-				E9330A791A98B7490088623D /* GloverTests */,
-				E9330A9D1A98D4600088623D /* GloverExample */,
-				E9330AB81A98D4600088623D /* GloverExampleTests */,
-				E9330ACE1A98F6270088623D /* StandardExample */,
-				E9330AE91A98F6280088623D /* StandardExampleTests */,
-				E91E906F1AAC614F0046C823 /* GloverFramework */,
+				E9F589FD1C947B670074D690 /* Glover */,
+				E9F58A071C947B670074D690 /* GloverTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E9330A6D1A98B7490088623D /* Resources */ = {
+		E9F589FC1C947B670074D690 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9330A781A98B7490088623D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330A9C1A98D4600088623D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330AAF1A98D4600088623D /* Main.storyboard in Resources */,
-				E9330AB41A98D4600088623D /* LaunchScreen.xib in Resources */,
-				E9330AB11A98D4600088623D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AB71A98D4600088623D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330ACD1A98F6270088623D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330AE01A98F6280088623D /* Main.storyboard in Resources */,
-				E9330AE51A98F6280088623D /* LaunchScreen.xib in Resources */,
-				E9330AE21A98F6280088623D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AE81A98F6280088623D /* Resources */ = {
+		E9F58A061C947B670074D690 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -605,162 +213,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E91E90751AAC615C0046C823 /* Build Fat Library */ = {
+		E96309421CCCD48E00F4C238 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Build Fat Library";
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Glover/FatLibraryBuildScript.sh";
+			shellScript = "if [ ${CONFIGURATION} = \"Debug\" ]; then\n    if which swiftlint >/dev/null; then\n        swiftlint\n    else\n        echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E9330A6A1A98B7490088623D /* Sources */ = {
+		E9F589F91C947B670074D690 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94674DE1ABE257000C4DFA2 /* GVRDataManagerConfiguration.m in Sources */,
-				E9330A931A98B94C0088623D /* GVRDataManager.m in Sources */,
+				E9F58A1B1C947D5D0074D690 /* Configuration.swift in Sources */,
+				E9F58A191C947D4C0074D690 /* Manager.swift in Sources */,
+				E9F58A5D1C94C8D60074D690 /* Glover.swift in Sources */,
+				E9728C381C95E5D800333D38 /* PersistentStoreConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9330A761A98B7490088623D /* Sources */ = {
+		E9F58A041C947B670074D690 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9330A821A98B7490088623D /* GloverTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330A9A1A98D4600088623D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E91E906A1AAB35EE0046C823 /* PersistedEntity.m in Sources */,
-				E9330AA61A98D4600088623D /* AppDelegate.m in Sources */,
-				E91E90671AAB334F0046C823 /* BaseViewController.m in Sources */,
-				E91E906D1AAB35EE0046C823 /* InMemoryEntity.m in Sources */,
-				E9330AA91A98D4600088623D /* SImpleModel.xcdatamodeld in Sources */,
-				E92296D71AAB268A00E890AE /* ComplexModel.xcdatamodeld in Sources */,
-				E9330AAC1A98D4600088623D /* SimpleEntityViewController.m in Sources */,
-				E9330AC91A98D5120088623D /* SimpleEntity.m in Sources */,
-				E91E90611AAB32A70046C823 /* InMemoryEntityViewController.m in Sources */,
-				E91E905E1AAB32970046C823 /* PersistedEntityViewController.m in Sources */,
-				E9330AA31A98D4600088623D /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AB51A98D4600088623D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330AC01A98D4600088623D /* GloverExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330ACB1A98F6270088623D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330ADA1A98F6280088623D /* StandardExample.xcdatamodeld in Sources */,
-				E9330AD71A98F6280088623D /* AppDelegate.m in Sources */,
-				E9330ADD1A98F6280088623D /* ViewController.m in Sources */,
-				E9330AFA1A98FAF90088623D /* ExampleEntity.m in Sources */,
-				E9330AD41A98F6280088623D /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9330AE61A98F6280088623D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9330AF11A98F6280088623D /* StandardExampleTests.m in Sources */,
+				E9F58A0E1C947B680074D690 /* GloverTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E91E90741AAC61570046C823 /* PBXTargetDependency */ = {
+		E9F58A0B1C947B670074D690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E9330A6E1A98B7490088623D /* Glover */;
-			targetProxy = E91E90731AAC61570046C823 /* PBXContainerItemProxy */;
-		};
-		E9330A7D1A98B7490088623D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9330A6E1A98B7490088623D /* Glover */;
-			targetProxy = E9330A7C1A98B7490088623D /* PBXContainerItemProxy */;
-		};
-		E9330ABB1A98D4600088623D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9330A9D1A98D4600088623D /* GloverExample */;
-			targetProxy = E9330ABA1A98D4600088623D /* PBXContainerItemProxy */;
-		};
-		E9330AEC1A98F6280088623D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E9330ACE1A98F6270088623D /* StandardExample */;
-			targetProxy = E9330AEB1A98F6280088623D /* PBXContainerItemProxy */;
+			target = E9F589FD1C947B670074D690 /* Glover */;
+			targetProxy = E9F58A0A1C947B670074D690 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		E9330AAD1A98D4600088623D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9330AAE1A98D4600088623D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9330AB21A98D4600088623D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9330AB31A98D4600088623D /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		E9330ADE1A98F6280088623D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9330ADF1A98F6280088623D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9330AE31A98F6280088623D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9330AE41A98F6280088623D /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		E91E90701AAC614F0046C823 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E91E90711AAC614F0046C823 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E9330A831A98B7490088623D /* Debug */ = {
+		E9F58A101C947B680074D690 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -779,33 +279,36 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		E9330A841A98B7490088623D /* Release */ = {
+		E9F58A111C947B680074D690 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -823,18 +326,20 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -844,293 +349,94 @@
 			};
 			name = Release;
 		};
-		E9330A861A98B7490088623D /* Debug */ = {
+		E9F58A131C947B680074D690 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 4;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Glover/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletoolkit.Glover;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E9F58A141C947B680074D690 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletoolkit.Glover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
-		};
-		E9330A871A98B7490088623D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 4;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Glover/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
 			name = Release;
 		};
-		E9330A891A98B7490088623D /* Debug */ = {
+		E9F58A161C947B680074D690 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GloverTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletoolkit.GloverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		E9330A8A1A98B7490088623D /* Release */ = {
+		E9F58A171C947B680074D690 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GloverTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiletoolkit.GloverTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E9330AC21A98D4600088623D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GloverExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E9330AC31A98D4600088623D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = GloverExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E9330AC51A98D4600088623D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GloverExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GloverExample.app/GloverExample";
-			};
-			name = Debug;
-		};
-		E9330AC61A98D4600088623D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GloverExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GloverExample.app/GloverExample";
-			};
-			name = Release;
-		};
-		E9330AF31A98F6280088623D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StandardExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E9330AF41A98F6280088623D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = StandardExample/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		E9330AF61A98F6280088623D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StandardExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StandardExample.app/StandardExample";
-			};
-			name = Debug;
-		};
-		E9330AF71A98F6280088623D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = StandardExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StandardExample.app/StandardExample";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E91E90721AAC614F0046C823 /* Build configuration list for PBXAggregateTarget "GloverFramework" */ = {
+		E9F589F81C947B670074D690 /* Build configuration list for PBXProject "Glover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E91E90701AAC614F0046C823 /* Debug */,
-				E91E90711AAC614F0046C823 /* Release */,
+				E9F58A101C947B680074D690 /* Debug */,
+				E9F58A111C947B680074D690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9330A691A98B7490088623D /* Build configuration list for PBXProject "Glover" */ = {
+		E9F58A121C947B680074D690 /* Build configuration list for PBXNativeTarget "Glover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9330A831A98B7490088623D /* Debug */,
-				E9330A841A98B7490088623D /* Release */,
+				E9F58A131C947B680074D690 /* Debug */,
+				E9F58A141C947B680074D690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9330A851A98B7490088623D /* Build configuration list for PBXNativeTarget "Glover" */ = {
+		E9F58A151C947B680074D690 /* Build configuration list for PBXNativeTarget "GloverTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9330A861A98B7490088623D /* Debug */,
-				E9330A871A98B7490088623D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9330A881A98B7490088623D /* Build configuration list for PBXNativeTarget "GloverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9330A891A98B7490088623D /* Debug */,
-				E9330A8A1A98B7490088623D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9330AC11A98D4600088623D /* Build configuration list for PBXNativeTarget "GloverExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9330AC21A98D4600088623D /* Debug */,
-				E9330AC31A98D4600088623D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9330AC41A98D4600088623D /* Build configuration list for PBXNativeTarget "GloverExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9330AC51A98D4600088623D /* Debug */,
-				E9330AC61A98D4600088623D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9330AF21A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9330AF31A98F6280088623D /* Debug */,
-				E9330AF41A98F6280088623D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9330AF51A98F6280088623D /* Build configuration list for PBXNativeTarget "StandardExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9330AF61A98F6280088623D /* Debug */,
-				E9330AF71A98F6280088623D /* Release */,
+				E9F58A161C947B680074D690 /* Debug */,
+				E9F58A171C947B680074D690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E92296D51AAB268A00E890AE /* ComplexModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */,
-			);
-			currentVersion = E92296D61AAB268A00E890AE /* ComplexModel.xcdatamodel */;
-			path = ComplexModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		E9330AA71A98D4600088623D /* SImpleModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */,
-			);
-			currentVersion = E9330AA81A98D4600088623D /* SImpleModel.xcdatamodel */;
-			path = SImpleModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		E9330AD81A98F6280088623D /* StandardExample.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E9330AD91A98F6280088623D /* StandardExample.xcdatamodel */,
-			);
-			currentVersion = E9330AD91A98F6280088623D /* StandardExample.xcdatamodel */;
-			path = StandardExample.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = E9330A661A98B7490088623D /* Project object */;
+	rootObject = E9F589F51C947B670074D690 /* Project object */;
 }
