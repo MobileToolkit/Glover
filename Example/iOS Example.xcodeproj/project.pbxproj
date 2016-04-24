@@ -12,9 +12,26 @@
 		E963092D1CCCC06D00F4C238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E963092B1CCCC06D00F4C238 /* Main.storyboard */; };
 		E963092F1CCCC06D00F4C238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E963092E1CCCC06D00F4C238 /* Assets.xcassets */; };
 		E96309321CCCC06D00F4C238 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96309301CCCC06D00F4C238 /* LaunchScreen.storyboard */; };
-		E963093C1CCCC4D400F4C238 /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E963093B1CCCC4D400F4C238 /* Glover.framework */; };
 		E963093F1CCCCC0600F4C238 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E963093D1CCCCC0600F4C238 /* Model.xcdatamodeld */; };
+		E96309451CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309431CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift */; };
+		E96309461CCCDF4A00F4C238 /* SomeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309441CCCDF4A00F4C238 /* SomeEntry.swift */; };
+		E96309501CCD2D6400F4C238 /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E963094F1CCD2D6400F4C238 /* Glover.framework */; };
+		E96309511CCD2D6400F4C238 /* Glover.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E963094F1CCD2D6400F4C238 /* Glover.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E963094E1CCD2D4A00F4C238 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E96309511CCD2D6400F4C238 /* Glover.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E96309241CCCC06D00F4C238 /* Glover iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Glover iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,8 +41,10 @@
 		E963092E1CCCC06D00F4C238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E96309311CCCC06D00F4C238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E96309331CCCC06D00F4C238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E963093B1CCCC4D400F4C238 /* Glover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Glover.framework; path = "../../../Library/Developer/Xcode/DerivedData/Glover-hfknjwghxnmncycsmiennbjrpkvw/Build/Products/Debug-iphonesimulator/Glover.framework"; sourceTree = "<group>"; };
 		E963093E1CCCCC0600F4C238 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E96309431CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SomeEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E96309441CCCDF4A00F4C238 /* SomeEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeEntry.swift; sourceTree = "<group>"; };
+		E963094F1CCD2D6400F4C238 /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Glover.framework; path = "/Users/suntrix/Library/Developer/Xcode/DerivedData/Glover-hfknjwghxnmncycsmiennbjrpkvw/Build/Products/Debug-iphoneos/Glover.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E963093C1CCCC4D400F4C238 /* Glover.framework in Frameworks */,
+				E96309501CCD2D6400F4C238 /* Glover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +62,7 @@
 		E963091B1CCCC06D00F4C238 = {
 			isa = PBXGroup;
 			children = (
-				E963093B1CCCC4D400F4C238 /* Glover.framework */,
+				E963094F1CCD2D6400F4C238 /* Glover.framework */,
 				E96309261CCCC06D00F4C238 /* Sources */,
 				E96309251CCCC06D00F4C238 /* Products */,
 			);
@@ -62,10 +81,10 @@
 			children = (
 				E96309271CCCC06D00F4C238 /* AppDelegate.swift */,
 				E96309291CCCC06D00F4C238 /* ViewController.swift */,
+				E96309471CCCDF5300F4C238 /* Model */,
 				E963092B1CCCC06D00F4C238 /* Main.storyboard */,
 				E963092E1CCCC06D00F4C238 /* Assets.xcassets */,
 				E96309391CCCC09700F4C238 /* Supporting Files */,
-				E963093D1CCCCC0600F4C238 /* Model.xcdatamodeld */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -79,6 +98,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E96309471CCCDF5300F4C238 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E963093D1CCCCC0600F4C238 /* Model.xcdatamodeld */,
+				E96309431CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift */,
+				E96309441CCCDF4A00F4C238 /* SomeEntry.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,6 +118,7 @@
 				E96309201CCCC06D00F4C238 /* Sources */,
 				E96309211CCCC06D00F4C238 /* Frameworks */,
 				E96309221CCCC06D00F4C238 /* Resources */,
+				E963094E1CCD2D4A00F4C238 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,6 +141,7 @@
 				TargetAttributes = {
 					E96309231CCCC06D00F4C238 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Y958SVCHZ8;
 					};
 				};
 			};
@@ -151,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E963092A1CCCC06D00F4C238 /* ViewController.swift in Sources */,
+				E96309461CCCDF4A00F4C238 /* SomeEntry.swift in Sources */,
 				E96309281CCCC06D00F4C238 /* AppDelegate.swift in Sources */,
+				E96309451CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift in Sources */,
 				E963093F1CCCCC0600F4C238 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,10 +300,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiletoolkit.Glover-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -278,10 +314,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiletoolkit.Glover-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

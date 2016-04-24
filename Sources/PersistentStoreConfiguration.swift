@@ -13,7 +13,7 @@ public enum PersistentStoreType: String {
     case SQLite
     case Binary
     case InMemory
-    
+
     func toCoreDataStoreType() -> String {
         switch self {
         case .SQLite:
@@ -29,32 +29,35 @@ public enum PersistentStoreType: String {
 //public struct PersistentStoreType {
 //    @available(iOS 3.0, OSX 10.4, *)
 //    static let SQLite = NSSQLiteStoreType
-//    
+//
 ////    @available(OSX 10.4, *)
 ////    static let XML = NSXMLStoreType
-//    
+//
 //    @available(iOS 3.0, OSX 10.4, *)
 //    static let Binary = NSBinaryStoreType
-//    
+//
 //    @available(iOS 3.0, OSX 10.4, *)
 //    static let InMemory = NSInMemoryStoreType
 //}
 
-public class PersistentStoreConfiguration {
-    
+public struct PersistentStoreConfiguration: CustomStringConvertible, CustomDebugStringConvertible {
     var type: PersistentStoreType
-    
     var url: NSURL?
-    
     var configuration: String?
-    
     var options: [String: AnyObject]?
-    
+
+    public var description: String {
+        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(configuration) | URL: \(url) | options: \(options) ]"
+    }
+
+    public var debugDescription: String {
+        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(configuration) | URL: \(url) | options: \(options) ]"
+    }
+
     public init(type: PersistentStoreType, url: NSURL? = nil, configuration: String? = nil, options: [String: AnyObject]? = nil) {
         self.type = type
         self.url = url
         self.configuration = configuration
         self.options = options
     }
-    
 }

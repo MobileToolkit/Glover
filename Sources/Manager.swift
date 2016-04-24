@@ -10,51 +10,104 @@ import Foundation
 import CoreData
 
 public class Manager {
-    
-    var configuration: Configuration
-    
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    private var configuration: Configuration
+
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.configuration.model)
-        
+
         for persistentStoreConfiguration in self.configuration.persistentStoreConfigurations {
+            let type = persistentStoreConfiguration.type
+            let configuration = persistentStoreConfiguration.configuration
+            let url = persistentStoreConfiguration.url
+            let options = persistentStoreConfiguration.options
+
             do {
-                try coordinator.addPersistentStoreWithType(persistentStoreConfiguration.type.toCoreDataStoreType(), configuration: persistentStoreConfiguration.configuration, URL: persistentStoreConfiguration.url, options: persistentStoreConfiguration.options)
+                try coordinator.addPersistentStoreWithType(type.toCoreDataStoreType(), configuration: configuration, URL: url, options: options)
             } catch {
+                let errorDescription = "Failed to initialize persistent store: \(persistentStoreConfiguration)"
+
                 let userInfo = [
-                    NSLocalizedDescriptionKey: "Failed to initialize the persistent store: [ type: \(persistentStoreConfiguration.type) | configuration: \(persistentStoreConfiguration.configuration) | URL: \(persistentStoreConfiguration.url) | options: \(persistentStoreConfiguration.options) ]",
+                    NSLocalizedDescriptionKey: errorDescription,
                     NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data.",
                     NSUnderlyingErrorKey: error as NSError
                 ]
-                
+
                 let wrappedError = NSError(domain: Errors.Domain, code: Errors.PersistentStoreCreationErrorCode, userInfo: userInfo)
 
-                NSLog("GLOVER: Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+                NSLog("Glover: error: \(wrappedError) | \(wrappedError.userInfo)")
             }
         }
-        
+
         return coordinator
     }()
-    
-    public lazy var managedObjectContext: NSManagedObjectContext = {
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
-        
-        return managedObjectContext
+
+    private lazy var masterContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        context.persistentStoreCoordinator = self.persistentStoreCoordinator
+
+        return context
     }()
-    
+
+    public lazy var managedObjectContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        context.parentContext = self.masterContext
+
+        return context
+    }()
+
+    private lazy var workerContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        context.parentContext = self.managedObjectContext
+
+        return context
+    }()
+
     public init(configuration: Configuration) {
         self.configuration = configuration
     }
-    
-    public func saveContext() {
-        if managedObjectContext.hasChanges {
+
+    public func performOnWorkerContext(closure: (context: NSManagedObjectContext) -> Void) {
+        workerContext.performBlock {
+            NSLog("Glover: working on thread \(NSThread.currentThread())")
+
+            closure(context: self.workerContext)
+
             do {
-                try managedObjectContext.save()
+                try self.workerContext.save()
+
+                self.saveContext()
             } catch {
                 let nserror = error as NSError
-                NSLog("GLOVER: Unresolved error \(nserror), \(nserror.userInfo)")
+                NSLog("Glover: error: \(nserror) | \(nserror.userInfo)")
             }
         }
     }
-    
+
+    private func saveMasterContext() {
+        masterContext.performBlock {
+            if self.masterContext.hasChanges {
+                do {
+                    try self.masterContext.save()
+                } catch {
+                    let nserror = error as NSError
+                    NSLog("Glover: error: \(nserror) | \(nserror.userInfo)")
+                }
+            }
+        }
+    }
+
+    public func saveContext() {
+        managedObjectContext.performBlock {
+            if self.managedObjectContext.hasChanges {
+                do {
+                    try self.managedObjectContext.save()
+
+                    self.saveMasterContext()
+                } catch {
+                    let nserror = error as NSError
+                    NSLog("Glover: error: \(nserror) | \(nserror.userInfo)")
+                }
+            }
+        }
+    }
 }
