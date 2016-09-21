@@ -10,13 +10,14 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController {
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    lazy var fetchedResultsController: NSFetchedResultsController = {
-        let fetchRequest = NSFetchRequest(entityName: "SomeEntry")
+    lazy var fetchedResultsController: NSFetchedResultsController<SomeEntry> = {
+        let fetchRequest: NSFetchRequest<SomeEntry> = NSFetchRequest(entityName: "SomeEntry")
         fetchRequest.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true) ]
 
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.appDelegate.manager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let controller = NSFetchedResultsController<SomeEntry>(fetchRequest: fetchRequest, managedObjectContext: appDelegate.manager.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
 
         controller.delegate = self
 
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
     var progressValue: Float = 0.0 {
         didSet {
             if progressValue != oldValue {
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async {
                     self.progressView.progress = self.progressValue
                 }
             }
@@ -37,27 +38,27 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var progressView: UIProgressView!
 
-    @IBAction func importObjects(sender: UIBarButtonItem) {
-        dispatch_async(dispatch_get_main_queue()) { 
-            sender.enabled = false
+    @IBAction func importObjects(_ sender: UIBarButtonItem) {
+        DispatchQueue.main.async { 
+            sender.isEnabled = false
 
             self.progressView.progress = 0.0
-            self.progressView.hidden = false
+            self.progressView.isHidden = false
         }
 
         for index in 1...1000 {
             appDelegate.manager.performOnWorkerContext { (context) in
-                let someEntry = NSEntityDescription.insertNewObjectForEntityForName("SomeEntry", inManagedObjectContext: context) as! SomeEntry
+                let someEntry = NSEntityDescription.insertNewObject(forEntityName: "SomeEntry", into: context) as! SomeEntry
 
                 someEntry.name = "Some Entry \(index)"
-                someEntry.createdAt = NSDate()
+                someEntry.createdAt = Date()
 
                 self.progressValue = Float(index) / 1000
             }
         }
 
-        dispatch_async(dispatch_get_main_queue()) {
-            sender.enabled = true
+        DispatchQueue.main.async {
+            sender.isEnabled = true
         }
     }
 
@@ -74,61 +75,61 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: NSFetchedResultsControllerDelegate {
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
 
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
-        case .Insert:
+        case .insert:
             if let insertIndexPath = newIndexPath {
-                tableView.insertRowsAtIndexPaths([insertIndexPath], withRowAnimation: .Fade)
+                tableView.insertRows(at: [insertIndexPath], with: .fade)
             }
-        case .Delete:
+        case .delete:
             if let deleteIndexPath = indexPath {
-                tableView.deleteRowsAtIndexPaths([deleteIndexPath], withRowAnimation: .Fade)
+                tableView.deleteRows(at: [deleteIndexPath], with: .fade)
             }
-        case .Update:
+        case .update:
             if let updateIndexPath = indexPath {
-                tableView.reloadRowsAtIndexPaths([updateIndexPath], withRowAnimation: .Fade)
+                tableView.reloadRows(at: [updateIndexPath], with: .fade)
             }
-        case .Move:
+        case .move:
             if let deleteIndexPath = indexPath {
-                tableView.deleteRowsAtIndexPaths([deleteIndexPath], withRowAnimation: .Fade)
+                tableView.deleteRows(at: [deleteIndexPath], with: .fade)
             }
 
             if let insertIndexPath = newIndexPath {
-                tableView.insertRowsAtIndexPaths([insertIndexPath], withRowAnimation: .Fade)
+                tableView.insertRows(at: [insertIndexPath], with: .fade)
             }
         }
     }
 
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        let sectionIndexSet = NSIndexSet(index: sectionIndex)
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        let sectionIndexSet = IndexSet(integer: sectionIndex)
 
         switch type {
-        case .Insert:
-            tableView.insertSections(sectionIndexSet, withRowAnimation: .Fade)
-        case .Delete:
-            tableView.deleteSections(sectionIndexSet, withRowAnimation: .Fade)
-        case .Update:
-            tableView.reloadSections(sectionIndexSet, withRowAnimation: .Fade)
+        case .insert:
+            tableView.insertSections(sectionIndexSet, with: .fade)
+        case .delete:
+            tableView.deleteSections(sectionIndexSet, with: .fade)
+        case .update:
+            tableView.reloadSections(sectionIndexSet, with: .fade)
         default:
             break
         }
     }
 
-    func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, sectionIndexTitleForSectionName sectionName: String) -> String? {
         return sectionName
     }
 
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
 }
 
 extension ViewController: UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
             return sections.count
         }
@@ -136,7 +137,7 @@ extension ViewController: UITableViewDataSource {
         return 0
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = fetchedResultsController.sections {
             return sections[section].numberOfObjects
         }
@@ -144,20 +145,20 @@ extension ViewController: UITableViewDataSource {
         return 0
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SomeEntryCell", forIndexPath: indexPath)
-        let someEntry = fetchedResultsController.objectAtIndexPath(indexPath) as! SomeEntry
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SomeEntryCell", for: indexPath)
+        let someEntry = fetchedResultsController.object(at: indexPath) 
 
         cell.textLabel?.text = someEntry.name
 
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
-        cell.detailTextLabel?.text = dateFormatter.stringFromDate(someEntry.createdAt)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        cell.detailTextLabel?.text = dateFormatter.string(from: someEntry.createdAt)
 
         return cell
     }
 
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let sections = fetchedResultsController.sections {
             return sections[section].name
         }

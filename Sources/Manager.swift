@@ -9,10 +9,10 @@
 import Foundation
 import CoreData
 
-public class Manager {
-    private var configuration: Configuration
+open class Manager {
+    fileprivate var configuration: Configuration
 
-    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    fileprivate lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.configuration.model)
 
         for persistentStoreConfiguration in self.configuration.persistentStoreConfigurations {
@@ -22,7 +22,7 @@ public class Manager {
             let options = persistentStoreConfiguration.options
 
             do {
-                try coordinator.addPersistentStoreWithType(type.toCoreDataStoreType(), configuration: configuration, URL: url, options: options)
+                try coordinator.addPersistentStore(ofType: type.toCoreDataStoreType(), configurationName: configuration, at: url as URL?, options: options)
             } catch {
                 let errorDescription = "Failed to initialize persistent store: \(persistentStoreConfiguration)"
 
@@ -30,7 +30,7 @@ public class Manager {
                     NSLocalizedDescriptionKey: errorDescription,
                     NSLocalizedFailureReasonErrorKey: "There was an error creating or loading the application's saved data.",
                     NSUnderlyingErrorKey: error as NSError
-                ]
+                ] as [String : Any]
 
                 let wrappedError = NSError(domain: Errors.Domain, code: Errors.PersistentStoreCreationErrorCode, userInfo: userInfo)
 
@@ -41,23 +41,23 @@ public class Manager {
         return coordinator
     }()
 
-    private lazy var masterContext: NSManagedObjectContext = {
-        var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    fileprivate lazy var masterContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         context.persistentStoreCoordinator = self.persistentStoreCoordinator
 
         return context
     }()
 
-    public lazy var managedObjectContext: NSManagedObjectContext = {
-        var context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        context.parentContext = self.masterContext
+    open lazy var managedObjectContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = self.masterContext
 
         return context
     }()
 
-    private lazy var workerContext: NSManagedObjectContext = {
-        var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        context.parentContext = self.managedObjectContext
+    fileprivate lazy var workerContext: NSManagedObjectContext = {
+        var context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = self.managedObjectContext
 
         return context
     }()
@@ -66,11 +66,11 @@ public class Manager {
         self.configuration = configuration
     }
 
-    public func performOnWorkerContext(closure: (context: NSManagedObjectContext) -> Void) {
-        workerContext.performBlock {
-            NSLog("Glover: working on thread \(NSThread.currentThread())")
+    open func performOnWorkerContext(_ closure: @escaping (_ context: NSManagedObjectContext) -> Void) {
+        workerContext.perform {
+            NSLog("Glover: working on thread \(Thread.current)")
 
-            closure(context: self.workerContext)
+            closure(self.workerContext)
 
             do {
                 try self.workerContext.save()
@@ -83,8 +83,8 @@ public class Manager {
         }
     }
 
-    private func saveMasterContext() {
-        masterContext.performBlock {
+    fileprivate func saveMasterContext() {
+        masterContext.perform {
             if self.masterContext.hasChanges {
                 do {
                     try self.masterContext.save()
@@ -96,8 +96,8 @@ public class Manager {
         }
     }
 
-    public func saveContext() {
-        managedObjectContext.performBlock {
+    open func saveContext() {
+        managedObjectContext.perform {
             if self.managedObjectContext.hasChanges {
                 do {
                     try self.managedObjectContext.save()

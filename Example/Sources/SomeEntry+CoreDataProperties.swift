@@ -15,6 +15,6 @@ import CoreData
 extension SomeEntry {
 
     @NSManaged var name: String
-    @NSManaged var createdAt: NSDate
+    @NSManaged var createdAt: Date
 
 }

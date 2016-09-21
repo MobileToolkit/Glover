@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E907A5FB1D92B1CD00493E8A /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E907A5FA1D92B1CD00493E8A /* Glover.framework */; };
 		E96309281CCCC06D00F4C238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309271CCCC06D00F4C238 /* AppDelegate.swift */; };
 		E963092A1CCCC06D00F4C238 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309291CCCC06D00F4C238 /* ViewController.swift */; };
 		E963092D1CCCC06D00F4C238 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E963092B1CCCC06D00F4C238 /* Main.storyboard */; };
@@ -15,8 +16,6 @@
 		E963093F1CCCCC0600F4C238 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E963093D1CCCCC0600F4C238 /* Model.xcdatamodeld */; };
 		E96309451CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309431CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift */; };
 		E96309461CCCDF4A00F4C238 /* SomeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96309441CCCDF4A00F4C238 /* SomeEntry.swift */; };
-		E96309501CCD2D6400F4C238 /* Glover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E963094F1CCD2D6400F4C238 /* Glover.framework */; };
-		E96309511CCD2D6400F4C238 /* Glover.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E963094F1CCD2D6400F4C238 /* Glover.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +25,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E96309511CCD2D6400F4C238 /* Glover.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -34,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E907A5FA1D92B1CD00493E8A /* Glover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Glover.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Glover-exugqqfhoccdhlexmzegvxxpwpbf/Build/Products/Debug-iphonesimulator/Glover.framework"; sourceTree = "<group>"; };
 		E96309241CCCC06D00F4C238 /* Glover iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Glover iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96309271CCCC06D00F4C238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E96309291CCCC06D00F4C238 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +43,6 @@
 		E963093E1CCCCC0600F4C238 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E96309431CCCDF4A00F4C238 /* SomeEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SomeEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E96309441CCCDF4A00F4C238 /* SomeEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SomeEntry.swift; sourceTree = "<group>"; };
-		E963094F1CCD2D6400F4C238 /* Glover.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Glover.framework; path = "/Users/suntrix/Library/Developer/Xcode/DerivedData/Glover-hfknjwghxnmncycsmiennbjrpkvw/Build/Products/Debug-iphoneos/Glover.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,19 +50,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E96309501CCD2D6400F4C238 /* Glover.framework in Frameworks */,
+				E907A5FB1D92B1CD00493E8A /* Glover.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E907A5F91D92B1CC00493E8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E907A5FA1D92B1CD00493E8A /* Glover.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E963091B1CCCC06D00F4C238 = {
 			isa = PBXGroup;
 			children = (
-				E963094F1CCD2D6400F4C238 /* Glover.framework */,
 				E96309261CCCC06D00F4C238 /* Sources */,
 				E96309251CCCC06D00F4C238 /* Products */,
+				E907A5F91D92B1CC00493E8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,12 +142,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = mobiletoolkit.org;
 				TargetAttributes = {
 					E96309231CCCC06D00F4C238 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y958SVCHZ8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -225,8 +232,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -271,8 +280,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -291,6 +302,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -307,6 +319,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiletoolkit.Glover-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -321,6 +334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mobiletoolkit.Glover-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

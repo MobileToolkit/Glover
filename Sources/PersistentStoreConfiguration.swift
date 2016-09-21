@@ -42,7 +42,7 @@ public enum PersistentStoreType: String {
 
 public struct PersistentStoreConfiguration: CustomStringConvertible, CustomDebugStringConvertible {
     var type: PersistentStoreType
-    var url: NSURL?
+    var url: URL?
     var configuration: String?
     var options: [String: AnyObject]?
 
@@ -54,7 +54,7 @@ public struct PersistentStoreConfiguration: CustomStringConvertible, CustomDebug
         return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(configuration) | URL: \(url) | options: \(options) ]"
     }
 
-    public init(type: PersistentStoreType, url: NSURL? = nil, configuration: String? = nil, options: [String: AnyObject]? = nil) {
+    public init(type: PersistentStoreType, url: URL? = nil, configuration: String? = nil, options: [String: AnyObject]? = nil) {
         self.type = type
         self.url = url
         self.configuration = configuration
