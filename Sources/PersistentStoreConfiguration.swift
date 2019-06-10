@@ -47,11 +47,11 @@ public struct PersistentStoreConfiguration: CustomStringConvertible, CustomDebug
     var options: [String: AnyObject]?
 
     public var description: String {
-        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(configuration) | URL: \(url) | options: \(options) ]"
+        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(String(describing: configuration)) | URL: \(String(describing: url)) | options: \(String(describing: options)) ]"
     }
 
     public var debugDescription: String {
-        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(configuration) | URL: \(url) | options: \(options) ]"
+        return "PersistentStoreConfiguration: [ type: \(type) | configuration: \(String(describing: configuration)) | URL: \(String(describing: url)) | options: \(String(describing: options)) ]"
     }
 
     public init(type: PersistentStoreType, url: URL? = nil, configuration: String? = nil, options: [String: AnyObject]? = nil) {
